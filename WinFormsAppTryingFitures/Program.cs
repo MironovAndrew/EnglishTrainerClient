@@ -17,7 +17,11 @@ namespace WinFormsAppTryingFitures
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+
+            PictureBox pb = new PictureBox();
+            pb.Image = Properties.Resources.default_male_photo;
+
+            Application.Run(new FormMenu("Katya", pb));
         }
     }
 }

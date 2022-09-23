@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,12 +66,15 @@ namespace WinFormsAppTryingFitures
 
             };
             #endregion
+
+
+
         }
 
 
         void showComments()
         {
-
+            listView1.Items.Clear();
 
 
 
@@ -123,20 +127,6 @@ namespace WinFormsAppTryingFitures
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 item = new ListViewItem(
                     new String[]
                     {
@@ -154,5 +144,146 @@ namespace WinFormsAppTryingFitures
 
 
         }
+
+
+
+
+
+
+        void showPanels(int count, PictureBox[] pictureBoxesList, string[] namesList, string[] commentsList, DateTime[] dateTimesList)
+        {
+
+            #region Объявление
+
+            Panel panelComment;
+            PictureBox pictureBoxAvatar;
+            Label labelName;
+            Label labelComment;
+            Label labelDate;
+
+            #endregion
+
+
+
+
+            for (int i = 0; i < 5; i++)
+            {
+                #region Инициализация
+
+                panelComment = new Panel();
+                pictureBoxAvatar = new PictureBox();
+                labelName = new Label();
+                labelComment = new Label();
+                labelDate = new Label();
+
+                // panelComment.SuspendLayout();
+                // ((ISupportInitialize)(pictureBoxAvatar)).BeginInit();
+                // this.SuspendLayout();
+
+                #endregion
+
+
+
+                #region pictureBoxAvatar
+
+                pictureBoxAvatar.Image = pictureBoxesList[i].Image;
+                pictureBoxAvatar.Location = new Point(1, 1);
+                pictureBoxAvatar.Size = new Size(100, 100);
+                pictureBoxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+
+                #endregion
+
+
+
+
+
+                #region  labelName
+
+                labelName.AutoSize = true;
+                labelName.Font = new Font("Century Gothic", 15.75F, FontStyle.Italic);
+                labelName.Location = new Point(108, 9);
+                labelName.Size = new Size(206, 24);
+                labelName.Text = namesList[i];
+                #endregion
+
+
+
+
+
+
+                #region  labelComment
+
+                labelComment.Font = new Font("Century Gothic", 9.75F);
+                labelComment.Location = new Point(108, 42);
+                labelComment.Text = commentsList[i];
+                labelComment.AutoSize = true;
+                labelComment.MaximumSize = new Size(700, labelComment.Text.Length);
+
+                #endregion
+
+
+
+
+
+
+                #region labelDate
+
+                labelDate.AutoSize = true;
+                labelDate.Font = new Font("Century Gothic", 9.75F);
+                labelDate.Location = new Point(570, 2);
+                labelDate.Size = new Size(220, 17);
+                labelDate.Text = Convert.ToString(dateTimesList[i]);
+
+                #endregion
+
+
+
+
+
+
+                #region PanelComment
+
+                panelComment.BackgroundImageLayout = ImageLayout.Tile;
+                panelComment.Controls.Add(labelDate);
+                panelComment.Controls.Add(labelComment);
+                panelComment.Controls.Add(labelName);
+                panelComment.Controls.Add(pictureBoxAvatar);
+
+
+
+
+                int delta = 45;
+
+                panelComment.Location = new Point(10, (labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
+
+                panelComment.Size = new Size(800, labelComment.Height + labelDate.Height + labelName.Height + delta);
+
+
+
+                panelComment.BackColor = Color.Orange;
+
+                #endregion
+
+
+
+
+                #region Возобновляем
+
+                // panelComment.ResumeLayout(false);
+                // panelComment.PerformLayout();
+                // ((ISupportInitialize)(pictureBoxAvatar)).EndInit();
+                // this.ResumeLayout(false);
+
+                #endregion
+
+
+                panel1.Controls.Add(panelComment);
+
+
+                typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, panel1, new object[] { true });
+
+            }
+        }
+
     }
 }

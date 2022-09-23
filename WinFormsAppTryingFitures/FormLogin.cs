@@ -31,9 +31,9 @@ namespace WinFormsAppTryingFitures
 
             SqlConnection connection = new SqlConnection(connectionString);
 
-           
+
             bool isTextOpen = false;
-           
+
             pictureBox1.Click += (a, b) =>
             {
 
@@ -71,24 +71,37 @@ namespace WinFormsAppTryingFitures
 
                     if (dataReader.HasRows)
                     {
-
-                        byte[] image = (byte[])(dataReader["Photo"]);
-
-                        if(image == null)
+                        if (dataReader["Photo"] != DBNull.Value)
                         {
-                            pictureBoxToMainForm = null;
+
+                            byte[] image = (byte[])(dataReader["Photo"]);
+
+                            if (image == null)
+                            {
+                                pictureBoxToMainForm = null;
+                            }
+                            else
+                            {
+
+                                MemoryStream memoryStream = new MemoryStream(image);
+                                pictureBoxToMainForm.Image = Image.FromStream(memoryStream);
+                            }
                         }
                         else
                         {
-                            
-                            MemoryStream memoryStream = new MemoryStream(image);
-                            pictureBoxToMainForm.Image = Image.FromStream(memoryStream);
+                            if (Convert.ToString(dataReader["Gender"]) == "m")
+                            {
+                                pictureBoxToMainForm.Image = Properties.Resources.default_male_photo;
+                            }
+                            else
+                            {
+                                pictureBoxToMainForm.Image = Properties.Resources.default_female_photo;
+                            }
                         }
 
-                         FormMenu form = new FormMenu(textBox1.Text, pictureBoxToMainForm);
-                         form.Show();
-                         this.Hide();
-
+                        FormMenu form = new FormMenu(textBox1.Text, pictureBoxToMainForm);
+                        form.Show();
+                        this.Hide();
 
                     }
 

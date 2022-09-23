@@ -89,6 +89,7 @@
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.listView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -105,14 +106,13 @@
             this.columnHeaderName,
             this.columnHeaderComment,
             this.columnHeaderDate});
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(25, 25);
+            this.listView1.Location = new System.Drawing.Point(815, 145);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(1040, 339);
+            this.listView1.Size = new System.Drawing.Size(263, 239);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;

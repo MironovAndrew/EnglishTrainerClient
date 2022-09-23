@@ -22,6 +22,9 @@ namespace WinFormsAppTryingFitures
         }
 
         string connectionString;
+        SqlConnection connection;
+        SqlCommand command;
+
         public FormForum(string login, PictureBox pb)
         {
             InitializeComponent();
@@ -39,13 +42,13 @@ namespace WinFormsAppTryingFitures
 
             buttonPost.Click += (a, b) =>
             {
-                SqlConnection connection = new SqlConnection(connectionString);
+                connection = new SqlConnection(connectionString);
 
                 connection.Open();
 
                 DateTime dateTimeNow = DateTime.Now;
 
-                SqlCommand command = new SqlCommand("INSERT INTO comments (person, comment, date) VALUES (@person, @comment, @date)", connection);
+                command = new SqlCommand("INSERT INTO comments (person, comment, date) VALUES (@person, @comment, @date)", connection);
                 command.Parameters.AddWithValue("person", login);
                 command.Parameters.AddWithValue("comment", textBox1.Text);
                 command.Parameters.AddWithValue("date", dateTimeNow);
@@ -53,7 +56,11 @@ namespace WinFormsAppTryingFitures
                 try
                 {
                     command.ExecuteNonQuery();
+
                     showComments();
+
+
+                    //panel1.Layout += (a, b) => { panelShowing_Layout(); };
                 }
                 catch (Exception ex)
                 {
@@ -64,26 +71,34 @@ namespace WinFormsAppTryingFitures
                     connection.Close();
                 }
 
-            };
-            #endregion
 
+            };
+
+            //panel1.Layout += (a, b) => { showPanels(); };
+
+            #endregion
 
 
         }
 
 
+        int count = 0;
         void showComments()
         {
+            #region Обнуление
+
             listView1.Items.Clear();
 
+            dateTimesList = new List<DateTime>();
+            namesList = new List<string>();
+            commentsList = new List<string>();
+            count = 0;
+            #endregion
 
-
-
-            SqlConnection connection = new SqlConnection(connectionString);
+            connection = new SqlConnection(connectionString);
             connection.Open();
 
-            SqlCommand command = new SqlCommand($"SELECT * FROM students, comments WHERE comments.person = students.Login", connection);
-            //  SqlCommand command = new SqlCommand($"SELECT students.Photo, students.Login, comments.comment, comments.date FROM students, comments WHERE comments.person = students.Login", connection);
+            command = new SqlCommand($"SELECT * FROM students, comments WHERE comments.person = students.Login", connection);
 
 
             SqlDataReader dataReader = command.ExecuteReader();
@@ -136,19 +151,30 @@ namespace WinFormsAppTryingFitures
                     });
 
                 listView1.Items.Add(item);
+
+
+                namesList.Add(Convert.ToString(dataReader["Login"]));
+                commentsList.Add(Convert.ToString(dataReader["comment"]));
+                dateTimesList.Add(Convert.ToDateTime(dataReader["date"]));
+
+                count++;
             }
 
-
-
-
-
+            showPanels();
 
         }
 
 
 
-        void showPanels(int count, PictureBox[] pictureBoxesList, string[] namesList, string[] commentsList, DateTime[] dateTimesList)
+
+
+        List<string> namesList;
+        List<string> commentsList;
+        List<DateTime> dateTimesList;
+
+        void showPanels()//int count, PictureBox[] pictureBoxesList, string[] namesList, string[] commentsList, DateTime[] dateTimesList)
         {
+            //panel1.Controls.Clear();
 
             #region Объявление
 
@@ -163,7 +189,7 @@ namespace WinFormsAppTryingFitures
 
 
 
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < count; i++)
             {
                 #region Инициализация
 
@@ -201,8 +227,8 @@ namespace WinFormsAppTryingFitures
                 labelName.Font = new Font("Century Gothic", 15.75F, FontStyle.Italic);
                 labelName.Location = new Point(108, 9);
                 labelName.Size = new Size(206, 24);
-                labelName.Text = "Алёна";
-                //labelName.Text = namesList[i];
+                //labelName.Text = "Алёна";
+                labelName.Text = namesList[i];
                 #endregion
 
 
@@ -214,10 +240,10 @@ namespace WinFormsAppTryingFitures
 
                 labelComment.Font = new Font("Century Gothic", 9.75F);
                 labelComment.Location = new Point(108, 42);
-                labelComment.Text = "Комментарий мой, да!";
-                //labelComment.Text = commentsList[i];
+                //labelComment.Text = "Комментарий мой, да!";
+                labelComment.Text = Convert.ToString(commentsList[i]);
                 labelComment.AutoSize = true;
-                labelComment.MaximumSize = new Size(700, labelComment.Text.Length);
+                labelComment.MaximumSize = new Size(panelComment.Width, int.MaxValue);
 
                 #endregion
 
@@ -230,10 +256,10 @@ namespace WinFormsAppTryingFitures
 
                 labelDate.AutoSize = true;
                 labelDate.Font = new Font("Century Gothic", 9.75F);
-                labelDate.Location = new Point(570, 2);
+                labelDate.Location = new Point(panel1.Size.Width - panelComment.Size.Width - 75, 2);
                 labelDate.Size = new Size(220, 17);
-                labelDate.Text = DateTime.Now.ToString();
-                //labelDate.Text = Convert.ToString(dateTimesList[i]);
+                //labelDate.Text = DateTime.Now.ToString();
+                labelDate.Text = $"Отправлено в {Convert.ToDateTime(dateTimesList[i]).ToString()}";
 
                 #endregion
 
@@ -244,7 +270,7 @@ namespace WinFormsAppTryingFitures
 
                 #region PanelComment
 
-                panelComment.BackgroundImageLayout = ImageLayout.Tile;
+                panelComment.BackgroundImageLayout = ImageLayout.None;
                 panelComment.Controls.Add(labelDate);
                 panelComment.Controls.Add(labelComment);
                 panelComment.Controls.Add(labelName);
@@ -255,8 +281,9 @@ namespace WinFormsAppTryingFitures
 
                 int delta = 45;
 
-                panelComment.Location = new Point(25, 25+(labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
+                panelComment.Location = new Point(25, 25 + (labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
 
+                //panelComment.Size = new Size(800, labelComment.Height + labelDate.Height + labelName.Height + delta);
                 panelComment.Size = new Size(panel1.Width - 50, labelComment.Height + labelDate.Height + labelName.Height + delta);
 
 
@@ -286,9 +313,21 @@ namespace WinFormsAppTryingFitures
             }
         }
 
-        private void panel1_Layout(object sender, LayoutEventArgs e)
+
+        void panelShowing_Layout()
         {
-            showPanels(0, null, null, null, null);
+            List<Control> controlsList = new List<Control>();
+            for (int i = 0; i < panel1.Controls.Count; i++)
+            {
+                controlsList.Add(panel1.Controls[i]);
+            }
+
+            foreach (Control control in controlsList)
+            {
+                control.Dispose();
+            }
+
+            showPanels();
         }
     }
 }

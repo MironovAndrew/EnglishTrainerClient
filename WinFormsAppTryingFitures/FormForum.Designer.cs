@@ -50,7 +50,7 @@
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelName.Location = new System.Drawing.Point(126, 46);
+            this.labelName.Location = new System.Drawing.Point(126, 38);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(135, 24);
             this.labelName.TabIndex = 1;
@@ -98,7 +98,6 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(25, 25, 25, 20);
             this.panel1.Size = new System.Drawing.Size(1090, 384);
             this.panel1.TabIndex = 5;
-            this.panel1.Layout += new System.Windows.Forms.LayoutEventHandler(this.panel1_Layout);
             // 
             // listView1
             // 
@@ -111,12 +110,13 @@
             this.listView1.GridLines = true;
             this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(815, 145);
+            this.listView1.Location = new System.Drawing.Point(500, 52);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(263, 239);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Visible = false;
             // 
             // columnHeaderName
             // 

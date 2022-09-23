@@ -104,6 +104,10 @@ namespace WinFormsAppTryingFitures
                         this.Hide();
 
                     }
+                    else
+                    {
+                        MessageBox.Show("Данные введены некорректно!");
+                    }
 
                 }
                 catch (Exception ex)

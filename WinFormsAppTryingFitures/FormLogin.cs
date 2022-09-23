@@ -31,6 +31,7 @@ namespace WinFormsAppTryingFitures
 
             SqlConnection connection = new SqlConnection(connectionString);
 
+           
             bool isTextOpen = false;
            
             pictureBox1.Click += (a, b) =>

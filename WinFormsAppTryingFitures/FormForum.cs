@@ -147,9 +147,6 @@ namespace WinFormsAppTryingFitures
 
 
 
-
-
-
         void showPanels(int count, PictureBox[] pictureBoxesList, string[] namesList, string[] commentsList, DateTime[] dateTimesList)
         {
 
@@ -166,7 +163,7 @@ namespace WinFormsAppTryingFitures
 
 
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 50; i++)
             {
                 #region Инициализация
 
@@ -186,7 +183,8 @@ namespace WinFormsAppTryingFitures
 
                 #region pictureBoxAvatar
 
-                pictureBoxAvatar.Image = pictureBoxesList[i].Image;
+                //pictureBoxAvatar.Image = pictureBoxesList[i].Image;
+                pictureBoxAvatar.Image = Properties.Resources.default_female_photo;
                 pictureBoxAvatar.Location = new Point(1, 1);
                 pictureBoxAvatar.Size = new Size(100, 100);
                 pictureBoxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
@@ -203,7 +201,8 @@ namespace WinFormsAppTryingFitures
                 labelName.Font = new Font("Century Gothic", 15.75F, FontStyle.Italic);
                 labelName.Location = new Point(108, 9);
                 labelName.Size = new Size(206, 24);
-                labelName.Text = namesList[i];
+                labelName.Text = "Алёна";
+                //labelName.Text = namesList[i];
                 #endregion
 
 
@@ -215,7 +214,8 @@ namespace WinFormsAppTryingFitures
 
                 labelComment.Font = new Font("Century Gothic", 9.75F);
                 labelComment.Location = new Point(108, 42);
-                labelComment.Text = commentsList[i];
+                labelComment.Text = "Комментарий мой, да!";
+                //labelComment.Text = commentsList[i];
                 labelComment.AutoSize = true;
                 labelComment.MaximumSize = new Size(700, labelComment.Text.Length);
 
@@ -232,7 +232,8 @@ namespace WinFormsAppTryingFitures
                 labelDate.Font = new Font("Century Gothic", 9.75F);
                 labelDate.Location = new Point(570, 2);
                 labelDate.Size = new Size(220, 17);
-                labelDate.Text = Convert.ToString(dateTimesList[i]);
+                labelDate.Text = DateTime.Now.ToString();
+                //labelDate.Text = Convert.ToString(dateTimesList[i]);
 
                 #endregion
 
@@ -254,9 +255,9 @@ namespace WinFormsAppTryingFitures
 
                 int delta = 45;
 
-                panelComment.Location = new Point(10, (labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
+                panelComment.Location = new Point(25, 25+(labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
 
-                panelComment.Size = new Size(800, labelComment.Height + labelDate.Height + labelName.Height + delta);
+                panelComment.Size = new Size(panel1.Width - 50, labelComment.Height + labelDate.Height + labelName.Height + delta);
 
 
 
@@ -285,5 +286,9 @@ namespace WinFormsAppTryingFitures
             }
         }
 
+        private void panel1_Layout(object sender, LayoutEventArgs e)
+        {
+            showPanels(0, null, null, null, null);
+        }
     }
 }

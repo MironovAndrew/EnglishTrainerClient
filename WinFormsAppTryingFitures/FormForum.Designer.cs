@@ -98,6 +98,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(25, 25, 25, 20);
             this.panel1.Size = new System.Drawing.Size(1090, 384);
             this.panel1.TabIndex = 5;
+            this.panel1.Layout += new System.Windows.Forms.LayoutEventHandler(this.panel1_Layout);
             // 
             // listView1
             // 

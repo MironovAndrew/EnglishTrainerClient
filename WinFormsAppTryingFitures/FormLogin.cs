@@ -115,5 +115,6 @@ namespace WinFormsAppTryingFitures
                 this.Hide();
             };
         }
+
     }
 }

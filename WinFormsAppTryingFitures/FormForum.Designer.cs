@@ -33,15 +33,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonPost = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeaderName = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderComment = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderDate = new System.Windows.Forms.ColumnHeader();
             this.labelComment = new System.Windows.Forms.Label();
             this.pictureBoxUpdate = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUpdate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -91,47 +86,12 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.listView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 166);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(25, 25, 25, 20);
             this.panel1.Size = new System.Drawing.Size(1090, 384);
             this.panel1.TabIndex = 5;
-            // 
-            // listView1
-            // 
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderName,
-            this.columnHeaderComment,
-            this.columnHeaderDate});
-            this.listView1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.listView1.GridLines = true;
-            this.listView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(500, 52);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(263, 239);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.Visible = false;
-            // 
-            // columnHeaderName
-            // 
-            this.columnHeaderName.Text = "Имя";
-            this.columnHeaderName.Width = 180;
-            // 
-            // columnHeaderComment
-            // 
-            this.columnHeaderComment.Text = "Комментарий";
-            this.columnHeaderComment.Width = 600;
-            // 
-            // columnHeaderDate
-            // 
-            this.columnHeaderDate.Text = "Время";
-            this.columnHeaderDate.Width = 200;
             // 
             // labelComment
             // 
@@ -181,7 +141,6 @@
             this.Name = "FormForum";
             this.Text = "FormForum";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUpdate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -197,10 +156,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelComment;
         private System.Windows.Forms.PictureBox pictureBoxUpdate;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeaderName;
-        private System.Windows.Forms.ColumnHeader columnHeaderComment;
-        private System.Windows.Forms.ColumnHeader columnHeaderDate;
         private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -14,6 +14,8 @@ using System.Windows.Forms;
 
 namespace WinFormsAppTryingFitures
 {
+
+
     public partial class FormForum : Form
     {
         public FormForum()
@@ -25,9 +27,11 @@ namespace WinFormsAppTryingFitures
         SqlConnection connection;
         SqlCommand command;
 
+
         public FormForum(string login, PictureBox pb)
         {
             InitializeComponent();
+
 
             connectionString = ConfigurationManager.ConnectionStrings["connection_string_user"].ConnectionString;
 
@@ -42,6 +46,17 @@ namespace WinFormsAppTryingFitures
 
             buttonPost.Click += (a, b) =>
             {
+
+                panel1.Controls.Clear();
+                textBox1.Text = "";
+
+
+
+
+
+
+
+
                 connection = new SqlConnection(connectionString);
 
                 connection.Open();
@@ -53,14 +68,12 @@ namespace WinFormsAppTryingFitures
                 command.Parameters.AddWithValue("comment", textBox1.Text);
                 command.Parameters.AddWithValue("date", dateTimeNow);
 
+
                 try
                 {
                     command.ExecuteNonQuery();
 
                     showComments();
-
-
-                    //panel1.Layout += (a, b) => { panelShowing_Layout(); };
                 }
                 catch (Exception ex)
                 {
@@ -71,10 +84,8 @@ namespace WinFormsAppTryingFitures
                     connection.Close();
                 }
 
-
             };
 
-            //panel1.Layout += (a, b) => { showPanels(); };
 
             #endregion
 
@@ -87,11 +98,11 @@ namespace WinFormsAppTryingFitures
         {
             #region Обнуление
 
-            listView1.Items.Clear();
-
             dateTimesList = new List<DateTime>();
             namesList = new List<string>();
             commentsList = new List<string>();
+            photosList = new List<Image>();
+
             count = 0;
             #endregion
 
@@ -137,11 +148,13 @@ namespace WinFormsAppTryingFitures
                         pictureBox2.Image = Properties.Resources.default_female_photo;
                     }
                 }
+
+                photosList.Add(pictureBox2.Image);
                 #endregion
 
 
 
-
+                #region Добавление имён, фото, коментов в массивы
                 item = new ListViewItem(
                     new String[]
                     {
@@ -149,15 +162,13 @@ namespace WinFormsAppTryingFitures
                         Convert.ToString(dataReader["comment"]),
                         Convert.ToString(dataReader["date"])
                     });
-
-                listView1.Items.Add(item);
-
-
+                            
                 namesList.Add(Convert.ToString(dataReader["Login"]));
                 commentsList.Add(Convert.ToString(dataReader["comment"]));
                 dateTimesList.Add(Convert.ToDateTime(dataReader["date"]));
 
                 count++;
+                #endregion
             }
 
             showPanels();
@@ -170,12 +181,11 @@ namespace WinFormsAppTryingFitures
 
         List<string> namesList;
         List<string> commentsList;
+        List<Image> photosList;
         List<DateTime> dateTimesList;
 
-        void showPanels()//int count, PictureBox[] pictureBoxesList, string[] namesList, string[] commentsList, DateTime[] dateTimesList)
+        void showPanels()
         {
-            //panel1.Controls.Clear();
-
             #region Объявление
 
             Panel panelComment;
@@ -183,6 +193,9 @@ namespace WinFormsAppTryingFitures
             Label labelName;
             Label labelComment;
             Label labelDate;
+
+
+            int coordinateY = 20;
 
             #endregion
 
@@ -199,21 +212,17 @@ namespace WinFormsAppTryingFitures
                 labelComment = new Label();
                 labelDate = new Label();
 
-                // panelComment.SuspendLayout();
-                // ((ISupportInitialize)(pictureBoxAvatar)).BeginInit();
-                // this.SuspendLayout();
-
                 #endregion
 
 
 
                 #region pictureBoxAvatar
 
-                //pictureBoxAvatar.Image = pictureBoxesList[i].Image;
-                pictureBoxAvatar.Image = Properties.Resources.default_female_photo;
-                pictureBoxAvatar.Location = new Point(1, 1);
+                pictureBoxAvatar.Image = photosList[i];
+                //pictureBoxAvatar.Image = Properties.Resources.default_female_photo;
+                pictureBoxAvatar.Location = new Point(0, 0);
                 pictureBoxAvatar.Size = new Size(100, 100);
-                pictureBoxAvatar.SizeMode = PictureBoxSizeMode.Zoom;
+                pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 #endregion
 
@@ -243,7 +252,8 @@ namespace WinFormsAppTryingFitures
                 //labelComment.Text = "Комментарий мой, да!";
                 labelComment.Text = Convert.ToString(commentsList[i]);
                 labelComment.AutoSize = true;
-                labelComment.MaximumSize = new Size(panelComment.Width, int.MaxValue);
+                //labelComment.MaximumSize = new Size(panelComment.Width, int.MaxValue);
+                labelComment.MaximumSize = new Size(panel1.Width - 200, int.MaxValue);
 
                 #endregion
 
@@ -266,9 +276,7 @@ namespace WinFormsAppTryingFitures
 
 
 
-
-
-                #region PanelComment
+                
 
                 panelComment.BackgroundImageLayout = ImageLayout.None;
                 panelComment.Controls.Add(labelDate);
@@ -281,29 +289,24 @@ namespace WinFormsAppTryingFitures
 
                 int delta = 45;
 
-                panelComment.Location = new Point(25, 25 + (labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
+
 
                 //panelComment.Size = new Size(800, labelComment.Height + labelDate.Height + labelName.Height + delta);
                 panelComment.Size = new Size(panel1.Width - 50, labelComment.Height + labelDate.Height + labelName.Height + delta);
 
 
 
+
+                //panelComment.Location = new Point(25, 25 + (labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
+                panelComment.Location = new Point(25, coordinateY);
+               
+                coordinateY += panelComment.Height + delta - 20;
+
+
+
+
+
                 panelComment.BackColor = Color.Orange;
-
-                #endregion
-
-
-
-
-                #region Возобновляем
-
-                // panelComment.ResumeLayout(false);
-                // panelComment.PerformLayout();
-                // ((ISupportInitialize)(pictureBoxAvatar)).EndInit();
-                // this.ResumeLayout(false);
-
-                #endregion
-
 
                 panel1.Controls.Add(panelComment);
 
@@ -311,23 +314,26 @@ namespace WinFormsAppTryingFitures
                 typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, panel1, new object[] { true });
 
             }
+
+
+            panel1.AutoScrollPosition = new Point(0,int.MaxValue);
         }
 
 
-        void panelShowing_Layout()
-        {
-            List<Control> controlsList = new List<Control>();
-            for (int i = 0; i < panel1.Controls.Count; i++)
-            {
-                controlsList.Add(panel1.Controls[i]);
-            }
-
-            foreach (Control control in controlsList)
-            {
-                control.Dispose();
-            }
-
-            showPanels();
-        }
+       // void panelShowing_Layout()
+       // {
+       //     List<Control> controlsList = new List<Control>();
+       //     for (int i = 0; i < panel1.Controls.Count; i++)
+       //     {
+       //         controlsList.Add(panel1.Controls[i]);
+       //     }
+       //
+       //     foreach (Control control in controlsList)
+       //     {
+       //         control.Dispose();
+       //     }
+       //
+       //     showPanels();
+       // }
     }
 }

@@ -30,27 +30,27 @@
         {
             this.panelLogin = new System.Windows.Forms.Panel();
             this.labelButtonRegister = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonEnter = new System.Windows.Forms.Button();
+            this.pictureBoxShowPassword = new System.Windows.Forms.PictureBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.labelEnter = new System.Windows.Forms.Label();
             this.panelLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogin
             // 
             this.panelLogin.Controls.Add(this.labelButtonRegister);
-            this.panelLogin.Controls.Add(this.button1);
-            this.panelLogin.Controls.Add(this.pictureBox1);
-            this.panelLogin.Controls.Add(this.textBox2);
+            this.panelLogin.Controls.Add(this.buttonEnter);
+            this.panelLogin.Controls.Add(this.pictureBoxShowPassword);
+            this.panelLogin.Controls.Add(this.textBoxPassword);
             this.panelLogin.Controls.Add(this.label2);
-            this.panelLogin.Controls.Add(this.textBox1);
-            this.panelLogin.Controls.Add(this.label1);
+            this.panelLogin.Controls.Add(this.textBoxLogin);
             this.panelLogin.Controls.Add(this.labelLogin);
+            this.panelLogin.Controls.Add(this.labelEnter);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelLogin.Location = new System.Drawing.Point(0, 0);
             this.panelLogin.Name = "panelLogin";
@@ -69,38 +69,38 @@
             this.labelButtonRegister.Text = "Зарегистрироваться";
             this.labelButtonRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // buttonEnter
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(174, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 31);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Готово!";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonEnter.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonEnter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEnter.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonEnter.Location = new System.Drawing.Point(174, 221);
+            this.buttonEnter.Name = "buttonEnter";
+            this.buttonEnter.Size = new System.Drawing.Size(247, 31);
+            this.buttonEnter.TabIndex = 8;
+            this.buttonEnter.Text = "Готово!";
+            this.buttonEnter.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // pictureBoxShowPassword
             // 
-            this.pictureBox1.Image = global::WinFormsAppTryingFitures.Properties.Resources.eye;
-            this.pictureBox1.Location = new System.Drawing.Point(427, 191);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxShowPassword.Image = global::WinFormsAppTryingFitures.Properties.Resources.eye;
+            this.pictureBoxShowPassword.Location = new System.Drawing.Point(427, 191);
+            this.pictureBoxShowPassword.Name = "pictureBoxShowPassword";
+            this.pictureBoxShowPassword.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxShowPassword.TabIndex = 7;
+            this.pictureBoxShowPassword.TabStop = false;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(174, 191);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(247, 24);
-            this.textBox2.TabIndex = 4;
+            this.textBoxPassword.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.Location = new System.Drawing.Point(174, 191);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(247, 24);
+            this.textBoxPassword.TabIndex = 4;
             // 
             // label2
             // 
@@ -112,35 +112,35 @@
             this.label2.Text = "Пароль";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBoxLogin
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(174, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 24);
-            this.textBox1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(9, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(576, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Логин";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.textBoxLogin.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxLogin.Location = new System.Drawing.Point(174, 123);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(247, 24);
+            this.textBoxLogin.TabIndex = 2;
             // 
             // labelLogin
             // 
-            this.labelLogin.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLogin.Location = new System.Drawing.Point(9, 42);
+            this.labelLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLogin.Location = new System.Drawing.Point(9, 100);
             this.labelLogin.Name = "labelLogin";
-            this.labelLogin.Size = new System.Drawing.Size(576, 48);
-            this.labelLogin.TabIndex = 0;
-            this.labelLogin.Text = "Вход";
+            this.labelLogin.Size = new System.Drawing.Size(576, 20);
+            this.labelLogin.TabIndex = 1;
+            this.labelLogin.Text = "Логин";
             this.labelLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelEnter
+            // 
+            this.labelEnter.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelEnter.Location = new System.Drawing.Point(9, 42);
+            this.labelEnter.Name = "labelEnter";
+            this.labelEnter.Size = new System.Drawing.Size(576, 48);
+            this.labelEnter.TabIndex = 0;
+            this.labelEnter.Text = "Вход";
+            this.labelEnter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormLogin
             // 
@@ -155,7 +155,7 @@
             this.Load += new System.EventHandler(this.FormLogin_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,13 +163,13 @@
         #endregion
 
         private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonEnter;
+        private System.Windows.Forms.PictureBox pictureBoxShowPassword;
+        private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.Label labelEnter;
         private System.Windows.Forms.Label labelButtonRegister;
     }
 }

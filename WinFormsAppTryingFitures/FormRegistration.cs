@@ -20,36 +20,44 @@ namespace WinFormsAppTryingFitures
             InitializeComponent();
         }
 
-        private void FormRegistration_Load(object sender, EventArgs e)
+        private async void FormRegistration_Load(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["connection_string_user"].ConnectionString;
-
             SqlConnection connection = new SqlConnection(connectionString);
 
 
 
+
+
+
             bool isTextOpen = false;
-            pictureBox1.Click += (a, b) =>
+            pictureBoxShowPassword.Click += (a, b) =>
             {
 
                 isTextOpen = !isTextOpen;
 
                 if (isTextOpen)
                 {
-                    pictureBox1.Image = Properties.Resources.eye;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye;
 
-                    textBox2.PasswordChar = '\0';
-                    textBox3.PasswordChar = '\0';
+                    textBoxPassword.PasswordChar = '\0';
+                    textBoxPasswordRepeat.PasswordChar = '\0';
                 }
                 else
                 {
-                    pictureBox1.Image = Properties.Resources.eye_hidden;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye_hidden;
 
-                    textBox2.PasswordChar = '*';
-                    textBox3.PasswordChar = '*';
+                    textBoxPassword.PasswordChar = '*';
+                    textBoxPasswordRepeat.PasswordChar = '*';
                 }
 
             };
+
+
+
+
+
+
 
 
             string gender = "m";
@@ -70,10 +78,16 @@ namespace WinFormsAppTryingFitures
                 };
             }
 
+
+
+
+
+
+            OpenFileDialog fileDialog = null;
             string photoPath = null;
             pictureBoxPhoto.Click += (a, b) =>
             {
-                OpenFileDialog fileDialog = new OpenFileDialog();
+                fileDialog = new OpenFileDialog();
                 fileDialog.Filter = "Изображение (*.png; *.jpeg; *.jpg)|*.png; *.jpeg; *.jpg";
                 fileDialog.Title = "Выберите фотографию";
 
@@ -91,51 +105,55 @@ namespace WinFormsAppTryingFitures
 
 
 
+            string photoBase64 = "error";
 
-
-
-
-
-
-
-
-
-
-
-
-
-            button1.Click += (a, b) =>
+            buttonAdd.Click += async (a, b) =>
             {
+                bool requirement = textBoxPassword.Text == textBoxPasswordRepeat.Text && textBoxLogin.Text.Length > 3
+                && textBoxFirstName.Text.Length > 3 && textBoxSecondName.Text.Length > 3;
 
-                if (textBox2.Text == textBox3.Text && textBox1.Text.Length > 3)
+                if (requirement)
                 {
                     connection.Open();
 
 
-                    string textCommand = $"INSERT INTO students (Login, Password, Photo, Gender) VALUES (@Login, @Password, @Photo, @Gender)";
-                    SqlCommand command; 
+                    string textCommand = $"INSERT INTO students (Login, Password, FirstName, SecondName, Photo, Gender) VALUES (@Login, @Password, @FirstName, @SecondName, @Photo, @Gender)";
+                    SqlCommand command;
 
 
                     if (photoPath != null)
                     {
                         command = new SqlCommand(textCommand, connection);
 
-                        byte[] image = null;
-                        FileStream fileStream = new FileStream(photoPath, FileMode.Open, FileAccess.Read);
-                        BinaryReader binaryReader = new BinaryReader(fileStream);
-                        image = binaryReader.ReadBytes((int)fileStream.Length);
+                        #region Старое копирование ПУТИ в БД
 
-                        command.Parameters.Add(new SqlParameter("Photo", image));
+                        //  byte[] image = null;
+                        //  FileStream fileStream = new FileStream(photoPath, FileMode.Open, FileAccess.Read);
+                        //  BinaryReader binaryReader = new BinaryReader(fileStream);
+                        //  image = binaryReader.ReadBytes((int)fileStream.Length);
+
+                        #endregion
+
+
+
+
+                        await Task.Run(() =>
+                        {
+                            photoBase64 = Convert.ToBase64String(File.ReadAllBytes(photoPath));
+                        });
+
+                        command.Parameters.Add(new SqlParameter("Photo", photoBase64));
                     }
                     else
                     {
-                        command = new SqlCommand(textCommand.Replace(" Photo,","").Replace(", @Photo",""), connection);
-
+                        command = new SqlCommand(textCommand.Replace(" Photo,", "").Replace(" @Photo,", ""), connection);
                     }
 
 
-                    command.Parameters.AddWithValue("Login", textBox1.Text);
-                    command.Parameters.AddWithValue("Password", textBox2.Text);
+                    command.Parameters.AddWithValue("Login", textBoxLogin.Text);
+                    command.Parameters.AddWithValue("Password", textBoxPassword.Text);
+                    command.Parameters.AddWithValue("FirstName", textBoxFirstName.Text);
+                    command.Parameters.AddWithValue("SecondName", textBoxSecondName.Text);
                     command.Parameters.AddWithValue("Gender", gender);
 
 
@@ -147,7 +165,8 @@ namespace WinFormsAppTryingFitures
                     {
                         command.ExecuteNonQuery();
 
-                        FormMenu form = new FormMenu(textBox1.Text, pictureBoxPhoto);
+
+                        FormMenu form = new FormMenu(textBoxSecondName.Text + " "+ textBoxFirstName.Text, pictureBoxPhoto);
                         form.Show();
                         this.Hide();
                     }
@@ -163,7 +182,7 @@ namespace WinFormsAppTryingFitures
                 }
                 else
                 {
-                    MessageBox.Show("Логин слишком короткий или пароли не совпадают!");
+                    MessageBox.Show("Проверьте введенные данные! Поля должны иметь длину более 3 символов!");
                 }
             };
 
@@ -173,16 +192,16 @@ namespace WinFormsAppTryingFitures
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text.Length > 0)
+            if (textBoxPassword.Text.Length > 0)
             {
                 label3.Visible = true;
-                textBox3.Visible = true;
+                textBoxPasswordRepeat.Visible = true;
             }
             else
             {
                 label3.Visible = false;
-                textBox3.Visible = false;
-                textBox3.Text = "";
+                textBoxPasswordRepeat.Visible = false;
+                textBoxPasswordRepeat.Text = "";
             }
         }
     }

@@ -31,17 +31,23 @@
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.pictureBoxShowPassword = new System.Windows.Forms.PictureBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.textBoxPasswordRepeat = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelRegistration = new System.Windows.Forms.Label();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.labelFirstName = new System.Windows.Forms.Label();
+            this.textBoxSecondName = new System.Windows.Forms.TextBox();
+            this.labelSecondName = new System.Windows.Forms.Label();
+            this.labelGroup = new System.Windows.Forms.Label();
+            this.comboBoxGroups = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // radioButtonFemale
@@ -77,51 +83,52 @@
             this.pictureBoxPhoto.TabIndex = 21;
             this.pictureBoxPhoto.TabStop = false;
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(177, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(247, 31);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Готово!";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.buttonAdd.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonAdd.Location = new System.Drawing.Point(177, 492);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(250, 31);
+            this.buttonAdd.TabIndex = 20;
+            this.buttonAdd.Text = "Готово!";
+            this.buttonAdd.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // pictureBoxShowPassword
             // 
-            this.pictureBox1.Image = global::WinFormsAppTryingFitures.Properties.Resources.eye;
-            this.pictureBox1.Location = new System.Drawing.Point(430, 176);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxShowPassword.Image = global::WinFormsAppTryingFitures.Properties.Resources.eye;
+            this.pictureBoxShowPassword.Location = new System.Drawing.Point(430, 176);
+            this.pictureBoxShowPassword.Name = "pictureBoxShowPassword";
+            this.pictureBoxShowPassword.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxShowPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxShowPassword.TabIndex = 19;
+            this.pictureBoxShowPassword.TabStop = false;
             // 
-            // textBox2
+            // textBoxPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(177, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(247, 24);
-            this.textBox2.TabIndex = 16;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBoxPassword.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPassword.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPassword.Location = new System.Drawing.Point(177, 176);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
+            this.textBoxPassword.Size = new System.Drawing.Size(247, 24);
+            this.textBoxPassword.TabIndex = 16;
+            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // textBoxPasswordRepeat
             // 
-            this.textBox3.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(177, 226);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(247, 24);
-            this.textBox3.TabIndex = 17;
-            this.textBox3.Visible = false;
+            this.textBoxPasswordRepeat.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxPasswordRepeat.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPasswordRepeat.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxPasswordRepeat.Location = new System.Drawing.Point(177, 226);
+            this.textBoxPasswordRepeat.Name = "textBoxPasswordRepeat";
+            this.textBoxPasswordRepeat.PasswordChar = '*';
+            this.textBoxPasswordRepeat.Size = new System.Drawing.Size(247, 24);
+            this.textBoxPasswordRepeat.TabIndex = 17;
+            this.textBoxPasswordRepeat.Visible = false;
             // 
             // label3
             // 
@@ -144,15 +151,15 @@
             this.label2.Text = "Пароль";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // textBoxLogin
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(177, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(247, 24);
-            this.textBox1.TabIndex = 14;
+            this.textBoxLogin.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLogin.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxLogin.Location = new System.Drawing.Point(177, 108);
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(247, 24);
+            this.textBoxLogin.TabIndex = 14;
             // 
             // label1
             // 
@@ -174,30 +181,99 @@
             this.labelRegistration.Text = "Регистрация";
             this.labelRegistration.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFirstName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxFirstName.Location = new System.Drawing.Point(177, 308);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(247, 24);
+            this.textBoxFirstName.TabIndex = 25;
+            // 
+            // labelFirstName
+            // 
+            this.labelFirstName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelFirstName.Location = new System.Drawing.Point(12, 285);
+            this.labelFirstName.Name = "labelFirstName";
+            this.labelFirstName.Size = new System.Drawing.Size(576, 20);
+            this.labelFirstName.TabIndex = 24;
+            this.labelFirstName.Text = "Имя";
+            this.labelFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxSecondName
+            // 
+            this.textBoxSecondName.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.textBoxSecondName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSecondName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxSecondName.Location = new System.Drawing.Point(180, 358);
+            this.textBoxSecondName.Name = "textBoxSecondName";
+            this.textBoxSecondName.Size = new System.Drawing.Size(247, 24);
+            this.textBoxSecondName.TabIndex = 27;
+            // 
+            // labelSecondName
+            // 
+            this.labelSecondName.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelSecondName.Location = new System.Drawing.Point(15, 335);
+            this.labelSecondName.Name = "labelSecondName";
+            this.labelSecondName.Size = new System.Drawing.Size(576, 20);
+            this.labelSecondName.TabIndex = 26;
+            this.labelSecondName.Text = "Фамилия";
+            this.labelSecondName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelGroup
+            // 
+            this.labelGroup.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelGroup.Location = new System.Drawing.Point(12, 409);
+            this.labelGroup.Name = "labelGroup";
+            this.labelGroup.Size = new System.Drawing.Size(576, 20);
+            this.labelGroup.TabIndex = 28;
+            this.labelGroup.Text = "Группа";
+            this.labelGroup.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // comboBoxGroups
+            // 
+            this.comboBoxGroups.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.comboBoxGroups.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBoxGroups.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxGroups.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxGroups.FormattingEnabled = true;
+            this.comboBoxGroups.Location = new System.Drawing.Point(177, 432);
+            this.comboBoxGroups.Name = "comboBoxGroups";
+            this.comboBoxGroups.Size = new System.Drawing.Size(250, 30);
+            this.comboBoxGroups.TabIndex = 29;
+            // 
             // FormRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 400);
+            this.ClientSize = new System.Drawing.Size(600, 550);
+            this.Controls.Add(this.comboBoxGroups);
+            this.Controls.Add(this.labelGroup);
+            this.Controls.Add(this.textBoxSecondName);
+            this.Controls.Add(this.labelSecondName);
+            this.Controls.Add(this.textBoxFirstName);
+            this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
             this.Controls.Add(this.pictureBoxPhoto);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.pictureBoxShowPassword);
+            this.Controls.Add(this.textBoxPassword);
+            this.Controls.Add(this.textBoxPasswordRepeat);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLogin);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelRegistration);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(600, 400);
             this.Name = "FormRegistration";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegistration";
             this.Load += new System.EventHandler(this.FormRegistration_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,14 +284,20 @@
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.PictureBox pictureBoxShowPassword;
+        private System.Windows.Forms.TextBox textBoxPassword;
+        private System.Windows.Forms.TextBox textBoxPasswordRepeat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxLogin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelRegistration;
+        private System.Windows.Forms.TextBox textBoxFirstName;
+        private System.Windows.Forms.Label labelFirstName;
+        private System.Windows.Forms.TextBox textBoxSecondName;
+        private System.Windows.Forms.Label labelSecondName;
+        private System.Windows.Forms.Label labelGroup;
+        private System.Windows.Forms.ComboBox comboBoxGroups;
     }
 }

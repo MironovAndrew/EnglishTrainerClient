@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,36 +26,40 @@ namespace WinFormsAppTryingFitures
             InitializeComponent();
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
+        private async void FormLogin_Load(object sender, EventArgs e)
         {
             string connectionString = ConfigurationManager.ConnectionStrings["connection_string_user"].ConnectionString;
 
             SqlConnection connection = new SqlConnection(connectionString);
 
 
+
+
             bool isTextOpen = false;
 
-            pictureBox1.Click += (a, b) =>
+            pictureBoxShowPassword.Click += (a, b) =>
             {
 
                 isTextOpen = !isTextOpen;
 
                 if (isTextOpen)
                 {
-                    pictureBox1.Image = Properties.Resources.eye;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye;
 
-                    textBox2.PasswordChar = '\0';
+                    textBoxPassword.PasswordChar = '\0';
                 }
                 else
                 {
-                    pictureBox1.Image = Properties.Resources.eye_hidden;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye_hidden;
 
-                    textBox2.PasswordChar = '*';
+                    textBoxPassword.PasswordChar = '*';
                 }
 
             };
 
-            button1.Click += (a, b) =>
+
+
+            buttonEnter.Click += (a, b) =>
             {
                 connection.Open();
 
@@ -62,34 +67,124 @@ namespace WinFormsAppTryingFitures
 
                 try
                 {
-                    SqlCommand command = new SqlCommand($"SELECT * FROM students WHERE Login = N'{textBox1.Text}' AND Password = N'{textBox2.Text}'", connection);
+                    #region Старое
+
+                    //  //SqlCommand command = new SqlCommand($"SELECT * FROM students WHERE Login = N'{textBox1.Text}' AND Password = N'{textBox2.Text}'", connection);
+                    //  SqlCommand command = new SqlCommand($"SELECT * FROM students WHERE Login = N'{textBox1.Text}' AND Password = N'{textBox2.Text}'", connection);
+                    //
+                    //
+                    //  dataReader = command.ExecuteReader();
+                    //  dataReader.Read();
+                    //
+                    //  PictureBox pictureBoxToMainForm = new PictureBox();
+                    //
+                    //  if (dataReader.HasRows)
+                    //  {
+                    //
+                    //       if (dataReader["Photo"] != DBNull.Value)
+                    //       {
+                    //      
+                    //           byte[] image = (byte[])(dataReader["Photo"]);
+                    //      
+                    //           if (image == null)
+                    //           {
+                    //               pictureBoxToMainForm = null;
+                    //           }
+                    //           else
+                    //           {
+                    //      
+                    //               MemoryStream memoryStream = new MemoryStream(image);
+                    //               pictureBoxToMainForm.Image = Image.FromStream(memoryStream);
+                    //           }
+                    //       }
+                    //
+                    //
+                    //
+                    //      
+                    //
+                    //
+                    //      else
+                    //      {
+                    //          if (Convert.ToString(dataReader["Gender"]) == "m")
+                    //          {
+                    //              pictureBoxToMainForm.Image = Properties.Resources.default_male_photo;
+                    //          }
+                    //          else
+                    //          {
+                    //              pictureBoxToMainForm.Image = Properties.Resources.default_female_photo;
+                    //          }
+                    //      }
+                    //
+                    //      FormMenu form = new FormMenu(textBox1.Text, pictureBoxToMainForm);
+                    //      form.Show();
+                    //      this.Hide();
+                    //
+                    //  }
+                    //  else
+                    //  {
+                    //      MessageBox.Show("Данные введены некорректно!");
+                    //  }
+                    #endregion
+
+
+
+
+                    PictureBox pictureBoxToMainForm = new PictureBox();
+
+
+                    string sqlCommand = $"SELECT * FROM students WHERE Login = N'{textBoxLogin.Text}' AND Password = N'{textBoxPassword.Text}'";
+
+                    SqlCommand command = new SqlCommand(sqlCommand, connection);
+
+
 
                     dataReader = command.ExecuteReader();
                     dataReader.Read();
 
-                    PictureBox pictureBoxToMainForm = new PictureBox();
+
+                    string firstSecondName = dataReader["FirstName"].ToString() + " " + dataReader["SecondName"].ToString();
+
+
+
+
 
                     if (dataReader.HasRows)
                     {
-                        if (dataReader["Photo"] != DBNull.Value)
+                        dataReader.Close();
+
+
+
+                        sqlCommand = $"SELECT Photo FROM students WHERE Login = N'{textBoxLogin.Text}' AND Password = N'{textBoxPassword.Text}'";
+
+                        command = new SqlCommand(sqlCommand, connection);
+
+
+
+                        string base64FromDataBase = command.ExecuteScalar().ToString();
+
+
+                        if (base64FromDataBase.Length > 0)
                         {
 
-                            byte[] image = (byte[])(dataReader["Photo"]);
+                            Image image = Image.FromStream(new MemoryStream(Convert.FromBase64String(base64FromDataBase)));
 
-                            if (image == null)
-                            {
-                                pictureBoxToMainForm = null;
-                            }
-                            else
-                            {
 
-                                MemoryStream memoryStream = new MemoryStream(image);
-                                pictureBoxToMainForm.Image = Image.FromStream(memoryStream);
-                            }
+                            pictureBoxToMainForm.Image = image;
+
+
                         }
                         else
                         {
-                            if (Convert.ToString(dataReader["Gender"]) == "m")
+                            sqlCommand = $"SELECT Gender FROM students WHERE Login = N'{textBoxLogin.Text}' AND Password = N'{textBoxPassword.Text}'";
+
+                            command = new SqlCommand(sqlCommand, connection);
+
+
+
+
+                            string gender = command.ExecuteScalar().ToString();
+
+                            if (gender == "m")
                             {
                                 pictureBoxToMainForm.Image = Properties.Resources.default_male_photo;
                             }
@@ -99,7 +194,9 @@ namespace WinFormsAppTryingFitures
                             }
                         }
 
-                        FormMenu form = new FormMenu(textBox1.Text, pictureBoxToMainForm);
+
+
+                        FormMenu form = new FormMenu(firstSecondName, pictureBoxToMainForm);
                         form.Show();
                         this.Hide();
 
@@ -108,7 +205,6 @@ namespace WinFormsAppTryingFitures
                     {
                         MessageBox.Show("Данные введены некорректно!");
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -125,6 +221,8 @@ namespace WinFormsAppTryingFitures
                 }
 
             };
+
+
 
             labelButtonRegister.Click += (a, b) =>
             {

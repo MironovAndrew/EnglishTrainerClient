@@ -117,7 +117,8 @@ namespace WinFormsAppTryingFitures
                     connection.Open();
 
 
-                    string textCommand = $"INSERT INTO students (Login, Password, FirstName, SecondName, Photo, Gender) VALUES (@Login, @Password, @FirstName, @SecondName, @Photo, @Gender)";
+                    string textCommand = $"INSERT INTO students (login, password, first_name, second_name, photo, gender) " +
+                    $"VALUES (@login, @password, @first_name, @second_name, @photo, @gender)";
                     SqlCommand command;
 
 
@@ -142,19 +143,19 @@ namespace WinFormsAppTryingFitures
                             photoBase64 = Convert.ToBase64String(File.ReadAllBytes(photoPath));
                         });
 
-                        command.Parameters.Add(new SqlParameter("Photo", photoBase64));
+                        command.Parameters.Add(new SqlParameter("photo", photoBase64));
                     }
                     else
                     {
-                        command = new SqlCommand(textCommand.Replace(" Photo,", "").Replace(" @Photo,", ""), connection);
+                        command = new SqlCommand(textCommand.Replace(" photo,", "").Replace(" @photo,", ""), connection);
                     }
 
 
-                    command.Parameters.AddWithValue("Login", textBoxLogin.Text);
-                    command.Parameters.AddWithValue("Password", textBoxPassword.Text);
-                    command.Parameters.AddWithValue("FirstName", textBoxFirstName.Text);
-                    command.Parameters.AddWithValue("SecondName", textBoxSecondName.Text);
-                    command.Parameters.AddWithValue("Gender", gender);
+                    command.Parameters.AddWithValue("login", textBoxLogin.Text);
+                    command.Parameters.AddWithValue("password", textBoxPassword.Text);
+                    command.Parameters.AddWithValue("first_name", textBoxFirstName.Text);
+                    command.Parameters.AddWithValue("second_name", textBoxSecondName.Text);
+                    command.Parameters.AddWithValue("gender", gender);
 
 
 
@@ -165,8 +166,10 @@ namespace WinFormsAppTryingFitures
                     {
                         command.ExecuteNonQuery();
 
+                        string firstSecondName = textBoxSecondName.Text + " " + textBoxFirstName.Text;
+                        string login = textBoxLogin.Text;
 
-                        FormMenu form = new FormMenu(textBoxSecondName.Text + " "+ textBoxFirstName.Text, pictureBoxPhoto);
+                        FormMenu form = new FormMenu(firstSecondName, login, pictureBoxPhoto);
                         form.Show();
                         this.Hide();
                     }

@@ -35,10 +35,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelComment = new System.Windows.Forms.Label();
             this.pictureBoxUpdate = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUpdate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelName
@@ -114,22 +112,12 @@
             this.pictureBoxUpdate.TabIndex = 7;
             this.pictureBoxUpdate.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(359, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
             // FormForum
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1090, 550);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBoxUpdate);
             this.Controls.Add(this.labelComment);
             this.Controls.Add(this.panel1);
@@ -142,7 +130,6 @@
             this.Text = "FormForum";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUpdate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,6 +143,5 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelComment;
         private System.Windows.Forms.PictureBox pictureBoxUpdate;
-        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

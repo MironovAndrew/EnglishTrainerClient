@@ -35,10 +35,10 @@ namespace WinFormsAppTryingFitures
             this.buttonTrainer = new System.Windows.Forms.Button();
             this.buttonAccount = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonForum = new System.Windows.Forms.Button();
             this.panelShowForm = new System.Windows.Forms.Panel();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.labelTest = new System.Windows.Forms.Label();
-            this.buttonForum = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelShowForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
@@ -69,7 +69,7 @@ namespace WinFormsAppTryingFitures
             this.buttonData.Name = "buttonData";
             this.buttonData.Size = new System.Drawing.Size(110, 110);
             this.buttonData.TabIndex = 6;
-            this.buttonData.Text = "Данные";
+            this.buttonData.Text = "Филиалы";
             this.buttonData.UseVisualStyleBackColor = false;
             // 
             // buttonTrainer
@@ -115,6 +115,20 @@ namespace WinFormsAppTryingFitures
             this.panelMenu.Size = new System.Drawing.Size(110, 550);
             this.panelMenu.TabIndex = 8;
             // 
+            // buttonForum
+            // 
+            this.buttonForum.BackColor = System.Drawing.Color.GreenYellow;
+            this.buttonForum.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonForum.FlatAppearance.BorderSize = 0;
+            this.buttonForum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonForum.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonForum.Location = new System.Drawing.Point(0, 440);
+            this.buttonForum.Name = "buttonForum";
+            this.buttonForum.Size = new System.Drawing.Size(110, 110);
+            this.buttonForum.TabIndex = 8;
+            this.buttonForum.Text = "Форум";
+            this.buttonForum.UseVisualStyleBackColor = false;
+            // 
             // panelShowForm
             // 
             this.panelShowForm.Controls.Add(this.pictureBoxPhoto);
@@ -144,20 +158,6 @@ namespace WinFormsAppTryingFitures
             this.labelTest.Name = "labelTest";
             this.labelTest.Size = new System.Drawing.Size(0, 39);
             this.labelTest.TabIndex = 0;
-            // 
-            // buttonForum
-            // 
-            this.buttonForum.BackColor = System.Drawing.Color.GreenYellow;
-            this.buttonForum.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonForum.FlatAppearance.BorderSize = 0;
-            this.buttonForum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonForum.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonForum.Location = new System.Drawing.Point(0, 440);
-            this.buttonForum.Name = "buttonForum";
-            this.buttonForum.Size = new System.Drawing.Size(110, 110);
-            this.buttonForum.TabIndex = 8;
-            this.buttonForum.Text = "Форум";
-            this.buttonForum.UseVisualStyleBackColor = false;
             // 
             // FormMenu
             // 

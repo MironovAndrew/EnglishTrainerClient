@@ -132,7 +132,7 @@ namespace WinFormsAppTryingFitures
                     PictureBox pictureBoxToMainForm = new PictureBox();
 
 
-                    string sqlCommand = $"SELECT * FROM students WHERE Login = N'{textBoxLogin.Text}' AND Password = N'{textBoxPassword.Text}'";
+                    string sqlCommand = $"SELECT * FROM students WHERE login = N'{textBoxLogin.Text}' AND password = N'{textBoxPassword.Text}'";
 
                     SqlCommand command = new SqlCommand(sqlCommand, connection);
 
@@ -142,8 +142,8 @@ namespace WinFormsAppTryingFitures
                     dataReader.Read();
 
 
-                    string firstSecondName = dataReader["FirstName"].ToString() + " " + dataReader["SecondName"].ToString();
-
+                    string firstSecondName = dataReader["second_name"].ToString() + " " + dataReader["first_name"].ToString();
+                    string login = dataReader["login"].ToString();
 
 
 
@@ -154,7 +154,7 @@ namespace WinFormsAppTryingFitures
 
 
 
-                        sqlCommand = $"SELECT Photo FROM students WHERE Login = N'{textBoxLogin.Text}' AND Password = N'{textBoxPassword.Text}'";
+                        sqlCommand = $"SELECT photo FROM students WHERE login = N'{textBoxLogin.Text}' AND password = N'{textBoxPassword.Text}'";
 
                         command = new SqlCommand(sqlCommand, connection);
 
@@ -175,7 +175,7 @@ namespace WinFormsAppTryingFitures
                         }
                         else
                         {
-                            sqlCommand = $"SELECT Gender FROM students WHERE Login = N'{textBoxLogin.Text}' AND Password = N'{textBoxPassword.Text}'";
+                            sqlCommand = $"SELECT gender FROM students WHERE login = N'{textBoxLogin.Text}' AND password = N'{textBoxPassword.Text}'";
 
                             command = new SqlCommand(sqlCommand, connection);
 
@@ -196,7 +196,7 @@ namespace WinFormsAppTryingFitures
 
 
 
-                        FormMenu form = new FormMenu(firstSecondName, pictureBoxToMainForm);
+                        FormMenu form = new FormMenu(firstSecondName, login, pictureBoxToMainForm);
                         form.Show();
                         this.Hide();
 

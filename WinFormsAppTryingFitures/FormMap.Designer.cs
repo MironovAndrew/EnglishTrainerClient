@@ -1,6 +1,6 @@
 ﻿namespace WinFormsAppTryingFitures
 {
-    partial class FormData
+    partial class FormMap
     {
         /// <summary>
         /// Required designer variable.

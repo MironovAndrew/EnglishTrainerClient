@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinFormsAppTryingFitures
 {
-    public partial class FormData : Form
+    public partial class FormMap : Form
     {
-        public FormData()
+        public FormMap()
         {
             InitializeComponent();
         }

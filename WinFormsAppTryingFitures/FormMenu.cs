@@ -14,15 +14,15 @@ namespace WinFormsAppTryingFitures
     {
 
         List<Button> btnsList;
-        string login;
+        string firstSecondName;
 
-        public FormMenu(string login, PictureBox pb)
+        public FormMenu(string firstSecondName,string login, PictureBox pb)
         {
             InitializeComponent();
 
-            this.login = login;
+            this.firstSecondName = firstSecondName;
 
-            labelTest.Text = $"Добрый день, {login}";
+            labelTest.Text = $"Добрый день, {firstSecondName}";
             pictureBoxPhoto.Image = pb.Image;
 
             #region ---ОПЫТЫ---     Обработка события через foreach( )
@@ -47,10 +47,10 @@ namespace WinFormsAppTryingFitures
 
             #region События кнопок для меню
             buttonAccount.Click += (a, b) => { showForm(new FormAccount()); };
-            buttonData.Click += (a, b) => { showForm(new FormData()); };
+            buttonData.Click += (a, b) => { showForm(new FormMap()); };
             buttonInfo.Click += (a, b) => { showForm(new FormInfo()); };
             buttonTrainer.Click += (a, b) => { showForm(new FormTrainer()); };
-            buttonForum.Click += (a, b) => { showForm(new FormForum(login, pb)); };
+            buttonForum.Click += (a, b) => { showForm(new FormForum(firstSecondName, login, pb)); };
             #endregion
 
 

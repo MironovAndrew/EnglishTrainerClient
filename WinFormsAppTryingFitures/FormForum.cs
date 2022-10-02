@@ -28,7 +28,7 @@ namespace WinFormsAppTryingFitures
         SqlCommand command;
 
 
-        public FormForum(string login, PictureBox pb)
+        public FormForum(string firstSecondName,string login, PictureBox pb)
         {
             InitializeComponent();
 
@@ -37,7 +37,7 @@ namespace WinFormsAppTryingFitures
 
             showComments();
 
-            labelName.Text = login;
+            labelName.Text = firstSecondName;
             pictureBox1.Image = pb.Image;
 
 
@@ -48,7 +48,6 @@ namespace WinFormsAppTryingFitures
             {
 
                 panel1.Controls.Clear();
-                textBox1.Text = "";
 
 
 
@@ -63,8 +62,8 @@ namespace WinFormsAppTryingFitures
 
                 DateTime dateTimeNow = DateTime.Now;
 
-                command = new SqlCommand("INSERT INTO comments (person, comment, date) VALUES (@person, @comment, @date)", connection);
-                command.Parameters.AddWithValue("person", login);
+                command = new SqlCommand("INSERT INTO comments (user_login, comment, date) VALUES (@user_login, @comment, @date)", connection);
+                command.Parameters.AddWithValue("user_login", login);
                 command.Parameters.AddWithValue("comment", textBox1.Text);
                 command.Parameters.AddWithValue("date", dateTimeNow);
 
@@ -82,6 +81,8 @@ namespace WinFormsAppTryingFitures
                 finally
                 {
                     connection.Close();
+
+                    textBox1.Text = "";
                 }
 
             };
@@ -92,7 +93,7 @@ namespace WinFormsAppTryingFitures
 
         }
 
-
+        PictureBox pictureBoxExtra = new PictureBox();
         int count = 0;
         void showComments()
         {
@@ -106,10 +107,11 @@ namespace WinFormsAppTryingFitures
             count = 0;
             #endregion
 
+
             connection = new SqlConnection(connectionString);
             connection.Open();
 
-            command = new SqlCommand($"SELECT * FROM students, comments WHERE comments.person = students.Login", connection);
+            command = new SqlCommand($"SELECT * FROM students, comments WHERE students.login = comments.user_login", connection);
 
 
             SqlDataReader dataReader = command.ExecuteReader();
@@ -120,37 +122,93 @@ namespace WinFormsAppTryingFitures
             {
 
                 #region ---ОПЫТЫ--- изображение
-                PictureBox pictureBoxFromDB = new PictureBox();
+                //   PictureBox pictureBoxFromDB = new PictureBox();
+                //
+                //   if (dataReader.HasRows && dataReader["photo"] != DBNull.Value)
+                //   {
+                //
+                //       byte[] image = (byte[])(dataReader["photo"]);
+                //
+                //       if (image == null)
+                //       {
+                //           pictureBoxFromDB = null;
+                //       }
+                //       else
+                //       {
+                //           MemoryStream memoryStream = new MemoryStream(image);
+                //           pictureBox2.Image = Image.FromStream(memoryStream);
+                //       }
+                //   }
+                //   else
+                //   {
+                //       if (Convert.ToString(dataReader["gender"]) == "m")
+                //       {
+                //           pictureBox2.Image = Properties.Resources.default_male_photo;
+                //       }
+                //       else
+                //       {
+                //           pictureBox2.Image = Properties.Resources.default_female_photo;
+                //       }
+                //   }
+                //
+                //   photosList.Add(pictureBox2.Image);
+                #endregion
 
-                if (dataReader.HasRows && dataReader["Photo"] != DBNull.Value)
+
+
+
+
+                //string base64FromDataBase = command.ExecuteScalar().ToString();
+                string base64FromDataBase = Convert.ToString(dataReader["photo"]);
+
+
+                if (base64FromDataBase.Length > 0)
                 {
 
-                    byte[] image = (byte[])(dataReader["Photo"]);
+                    Image image = Image.FromStream(new MemoryStream(Convert.FromBase64String(base64FromDataBase)));
 
-                    if (image == null)
-                    {
-                        pictureBoxFromDB = null;
-                    }
-                    else
-                    {
-                        MemoryStream memoryStream = new MemoryStream(image);
-                        pictureBox2.Image = Image.FromStream(memoryStream);
-                    }
+                    pictureBoxExtra.Image = image;
+
                 }
                 else
                 {
-                    if (Convert.ToString(dataReader["Gender"]) == "m")
+
+                    if (Convert.ToString(dataReader["gender"]) == "m")
                     {
-                        pictureBox2.Image = Properties.Resources.default_male_photo;
+                        pictureBoxExtra.Image = Properties.Resources.default_male_photo;
                     }
                     else
                     {
-                        pictureBox2.Image = Properties.Resources.default_female_photo;
+                        pictureBoxExtra.Image = Properties.Resources.default_female_photo;
                     }
                 }
 
-                photosList.Add(pictureBox2.Image);
-                #endregion
+
+                photosList.Add(pictureBoxExtra.Image);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

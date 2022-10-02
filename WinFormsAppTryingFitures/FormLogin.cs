@@ -142,14 +142,18 @@ namespace WinFormsAppTryingFitures
                     dataReader.Read();
 
 
-                    string firstSecondName = dataReader["second_name"].ToString() + " " + dataReader["first_name"].ToString();
-                    string login = dataReader["login"].ToString();
 
 
 
 
                     if (dataReader.HasRows)
                     {
+
+                        string firstSecondName = dataReader["second_name"].ToString() + " " + dataReader["first_name"].ToString();
+                        string login = dataReader["login"].ToString();
+
+
+
                         dataReader.Close();
 
 
@@ -203,12 +207,24 @@ namespace WinFormsAppTryingFitures
                     }
                     else
                     {
-                        MessageBox.Show("Данные введены некорректно!");
+                        //MessageBox.Show("Данные введены некорректно!");
+
+                        if (Application.OpenForms["FormShowMessage"] == null)
+                        {
+                            FormShowMessage form = new FormShowMessage("Данные введены некорректно!");
+                            form.Show();
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    // MessageBox.Show(ex.ToString());
+
+                    if (Application.OpenForms["FormShowMessage"] == null)
+                    {
+                        FormShowMessage form = new FormShowMessage(ex.Message);
+                        form.Show();
+                    }
                 }
                 finally
                 {

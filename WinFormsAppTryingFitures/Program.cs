@@ -19,10 +19,7 @@ namespace WinFormsAppTryingFitures
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-           // PictureBox pb = new PictureBox();
-           // pb.Image = Properties.Resources.default_male_photo;
 
-            //Application.Run(new FormMenu("Sveta", pb));
             Application.Run(new FormLogin());
         }
     }

@@ -111,6 +111,15 @@ namespace WinFormsAppTryingFitures.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню.
+        /// </summary>
+        internal static string StringError1 {
+            get {
+                return ResourceManager.GetString("StringError1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap update {

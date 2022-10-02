@@ -33,12 +33,13 @@
             // 
             // labelMessage
             // 
+            this.labelMessage.AutoSize = true;
             this.labelMessage.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelMessage.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelMessage.Location = new System.Drawing.Point(0, 0);
             this.labelMessage.Name = "labelMessage";
             this.labelMessage.Padding = new System.Windows.Forms.Padding(10);
-            this.labelMessage.Size = new System.Drawing.Size(462, 147);
+            this.labelMessage.Size = new System.Drawing.Size(85, 42);
             this.labelMessage.TabIndex = 0;
             this.labelMessage.Text = "label1";
             // 
@@ -52,6 +53,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormShowMessage";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

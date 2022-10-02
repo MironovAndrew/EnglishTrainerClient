@@ -16,6 +16,26 @@ namespace WinFormsAppTryingFitures
         {
             InitializeComponent();
 
+
+            labelMessage.Text = message;
+
+
+            labelMessage.MaximumSize = new Size(this.Width, Screen.PrimaryScreen.WorkingArea.Height);
+
+            this.Size = new Size(this.Size.Width, labelMessage.Size.Height);
+
+
+
+
+
+
+
+
+
+
+
+
+
             //Начальное положение формы задаётся вручную
             this.StartPosition = FormStartPosition.Manual;
             //Верхний левый угол экрана
@@ -30,7 +50,6 @@ namespace WinFormsAppTryingFitures
 
 
 
-            labelMessage.Text = message;
 
             formDisappearance();
         }

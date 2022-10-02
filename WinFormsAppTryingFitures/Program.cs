@@ -20,6 +20,7 @@ namespace WinFormsAppTryingFitures
 
 
 
+            //Application.Run(new FormShowMessage(Properties.Resources.StringError1));
             Application.Run(new FormLogin());
         }
     }

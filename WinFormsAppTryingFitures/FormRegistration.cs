@@ -38,14 +38,14 @@ namespace WinFormsAppTryingFitures
 
                 if (isTextOpen)
                 {
-                    pictureBoxShowPassword.Image = Properties.Resources.eye;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye_hidden;
 
                     textBoxPassword.PasswordChar = '\0';
                     textBoxPasswordRepeat.PasswordChar = '\0';
                 }
                 else
                 {
-                    pictureBoxShowPassword.Image = Properties.Resources.eye_hidden;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye;
 
                     textBoxPassword.PasswordChar = '*';
                     textBoxPasswordRepeat.PasswordChar = '*';

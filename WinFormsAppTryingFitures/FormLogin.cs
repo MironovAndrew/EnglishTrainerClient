@@ -44,13 +44,13 @@ namespace WinFormsAppTryingFitures
 
                 if (isTextOpen)
                 {
-                    pictureBoxShowPassword.Image = Properties.Resources.eye;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye_hidden;
 
                     textBoxPassword.PasswordChar = '\0';
                 }
                 else
                 {
-                    pictureBoxShowPassword.Image = Properties.Resources.eye_hidden;
+                    pictureBoxShowPassword.Image = Properties.Resources.eye;
 
                     textBoxPassword.PasswordChar = '*';
                 }
@@ -209,11 +209,11 @@ namespace WinFormsAppTryingFitures
                     {
                         //MessageBox.Show("Данные введены некорректно!");
 
-                        if (Application.OpenForms["FormShowMessage"] == null)
-                        {
+                      if (Application.OpenForms["FormShowMessage"] == null)
+                      {
                             FormShowMessage form = new FormShowMessage("Данные введены некорректно!");
                             form.Show();
-                        }
+                      }
                     }
                 }
                 catch (Exception ex)

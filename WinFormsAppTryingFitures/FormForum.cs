@@ -111,7 +111,7 @@ namespace WinFormsAppTryingFitures
             connection = new SqlConnection(connectionString);
             connection.Open();
 
-            command = new SqlCommand($"SELECT * FROM students, comments WHERE students.login = comments.user_login", connection);
+            command = new SqlCommand($"SELECT * FROM students, comments WHERE comments.user_login = students.login", connection);
 
 
             SqlDataReader dataReader = command.ExecuteReader();
@@ -221,7 +221,8 @@ namespace WinFormsAppTryingFitures
                         Convert.ToString(dataReader["date"])
                     });
                             
-                namesList.Add(Convert.ToString(dataReader["Login"]));
+                //namesList.Add(Convert.ToString(dataReader["Login"]));
+                namesList.Add(Convert.ToString(dataReader["second_name"]) + " " + Convert.ToString(dataReader["first_name"]));
                 commentsList.Add(Convert.ToString(dataReader["comment"]));
                 dateTimesList.Add(Convert.ToDateTime(dataReader["date"]));
 

@@ -38,7 +38,7 @@ namespace WinFormsAppTryingFitures
             showComments();
 
             labelName.Text = firstSecondName;
-            pictureBox1.Image = pb.Image;
+            pictureBoxOwnPhoto.Image = pb.Image;
 
 
             #region События кнопок для форума
@@ -248,7 +248,8 @@ namespace WinFormsAppTryingFitures
             #region Объявление
 
             Panel panelComment;
-            PictureBox pictureBoxAvatar;
+            //PictureBox pictureBoxAvatar;
+            RoundPictureBox pictureBoxAvatar;
             Label labelName;
             Label labelComment;
             Label labelDate;
@@ -266,7 +267,8 @@ namespace WinFormsAppTryingFitures
                 #region Инициализация
 
                 panelComment = new Panel();
-                pictureBoxAvatar = new PictureBox();
+                //pictureBoxAvatar = new PictureBox();
+                pictureBoxAvatar = new RoundPictureBox();
                 labelName = new Label();
                 labelComment = new Label();
                 labelDate = new Label();

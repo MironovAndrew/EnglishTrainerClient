@@ -89,8 +89,8 @@ namespace WinFormsAppTryingFitures
 
 
 
-            gMapControl.MinZoom = 5;
-            gMapControl.MaxZoom = 15;
+            gMapControl.MinZoom = 10;
+            gMapControl.MaxZoom = 18;
             gMapControl.Zoom = 15;
 
 

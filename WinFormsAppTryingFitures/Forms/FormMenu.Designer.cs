@@ -30,33 +30,33 @@ namespace WinFormsAppTryingFitures
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonInfo = new System.Windows.Forms.Button();
+            this.buttonTranslator = new System.Windows.Forms.Button();
             this.buttonData = new System.Windows.Forms.Button();
             this.buttonTrainer = new System.Windows.Forms.Button();
             this.buttonAccount = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.buttonForum = new System.Windows.Forms.Button();
             this.panelShowForm = new System.Windows.Forms.Panel();
-            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPhoto = new WinFormsAppTryingFitures.RoundPictureBox();
             this.labelTest = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelShowForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonInfo
+            // buttonTranslator
             // 
-            this.buttonInfo.BackColor = System.Drawing.Color.GreenYellow;
-            this.buttonInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonInfo.FlatAppearance.BorderSize = 0;
-            this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInfo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonInfo.Location = new System.Drawing.Point(0, 220);
-            this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(110, 110);
-            this.buttonInfo.TabIndex = 7;
-            this.buttonInfo.Text = "Подробнее";
-            this.buttonInfo.UseVisualStyleBackColor = false;
+            this.buttonTranslator.BackColor = System.Drawing.Color.GreenYellow;
+            this.buttonTranslator.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTranslator.FlatAppearance.BorderSize = 0;
+            this.buttonTranslator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTranslator.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonTranslator.Location = new System.Drawing.Point(0, 220);
+            this.buttonTranslator.Name = "buttonTranslator";
+            this.buttonTranslator.Size = new System.Drawing.Size(110, 110);
+            this.buttonTranslator.TabIndex = 7;
+            this.buttonTranslator.Text = "Переводчик";
+            this.buttonTranslator.UseVisualStyleBackColor = false;
             // 
             // buttonData
             // 
@@ -105,7 +105,7 @@ namespace WinFormsAppTryingFitures
             this.panelMenu.CausesValidation = false;
             this.panelMenu.Controls.Add(this.buttonForum);
             this.panelMenu.Controls.Add(this.buttonTrainer);
-            this.panelMenu.Controls.Add(this.buttonInfo);
+            this.panelMenu.Controls.Add(this.buttonTranslator);
             this.panelMenu.Controls.Add(this.buttonAccount);
             this.panelMenu.Controls.Add(this.buttonData);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -141,13 +141,12 @@ namespace WinFormsAppTryingFitures
             // 
             // pictureBoxPhoto
             // 
-            this.pictureBoxPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxPhoto.Image = global::WinFormsAppTryingFitures.Properties.Resources.default_male_photo;
             this.pictureBoxPhoto.Location = new System.Drawing.Point(22, 80);
             this.pictureBoxPhoto.Name = "pictureBoxPhoto";
             this.pictureBoxPhoto.Size = new System.Drawing.Size(140, 140);
             this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPhoto.TabIndex = 22;
+            this.pictureBoxPhoto.TabIndex = 23;
             this.pictureBoxPhoto.TabStop = false;
             // 
             // labelTest
@@ -181,14 +180,14 @@ namespace WinFormsAppTryingFitures
 
         #endregion
 
-        private System.Windows.Forms.Button buttonInfo;
+        private System.Windows.Forms.Button buttonTranslator;
         private System.Windows.Forms.Button buttonData;
         private System.Windows.Forms.Button buttonTrainer;
         private System.Windows.Forms.Button buttonAccount;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelShowForm;
         private System.Windows.Forms.Label labelTest;
-        private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button buttonForum;
+        private RoundPictureBox pictureBoxPhoto;
     }
 }

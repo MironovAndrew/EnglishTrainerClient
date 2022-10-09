@@ -1,6 +1,6 @@
-﻿namespace WinFormsAppTryingFitures
+﻿namespace WinFormsAppTryingFitures.Forms
 {
-    partial class FormInfo
+    partial class FormTranslator
     {
         /// <summary>
         /// Required designer variable.
@@ -30,15 +30,15 @@
         {
             this.SuspendLayout();
             // 
-            // FormInfo
+            // FormTranslator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(428, 368);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1090, 550);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormInfo";
-            this.Text = "FormInfo";
+            this.Name = "FormTranslator";
+            this.Text = "FormTranslator";
             this.ResumeLayout(false);
 
         }

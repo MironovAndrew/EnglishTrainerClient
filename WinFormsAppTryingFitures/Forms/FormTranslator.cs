@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsAppTryingFitures
+namespace WinFormsAppTryingFitures.Forms
 {
-    public partial class FormInfo : Form
+    public partial class FormTranslator : Form
     {
-        public FormInfo()
+        public FormTranslator()
         {
             InitializeComponent();
         }

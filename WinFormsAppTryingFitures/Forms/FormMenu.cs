@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsAppTryingFitures.Forms;
 
 namespace WinFormsAppTryingFitures
 {
@@ -31,7 +32,7 @@ namespace WinFormsAppTryingFitures
             //обращаться через foreach( )
             btnsList = new List<Button>()
             {
-                buttonAccount,buttonData,buttonInfo,buttonTrainer
+                buttonAccount,buttonData,buttonTranslator,buttonTrainer
             };
 
             //foreach (Button btn in btnsList)
@@ -48,7 +49,7 @@ namespace WinFormsAppTryingFitures
             #region События кнопок для меню
             buttonAccount.Click += (a, b) => { showForm(new FormAccount()); };
             buttonData.Click += (a, b) => { showForm(new FormMap()); };
-            buttonInfo.Click += (a, b) => { showForm(new FormInfo()); };
+            buttonTranslator.Click += (a, b) => { showForm(new FormTranslator()); };
             buttonTrainer.Click += (a, b) => { showForm(new FormTrainer()); };
             buttonForum.Click += (a, b) => { showForm(new FormForum(firstSecondName, login, pb)); };
             #endregion

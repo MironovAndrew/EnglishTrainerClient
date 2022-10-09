@@ -30,7 +30,6 @@
         {
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
-            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureBoxShowPassword = new System.Windows.Forms.PictureBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
@@ -46,8 +45,9 @@
             this.labelSecondName = new System.Windows.Forms.Label();
             this.labelGroup = new System.Windows.Forms.Label();
             this.comboBoxGroups = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
+            this.pictureBoxPhoto = new WinFormsAppTryingFitures.RoundPictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // radioButtonFemale
@@ -71,17 +71,6 @@
             this.radioButtonMale.TabStop = true;
             this.radioButtonMale.Text = "Мужской";
             this.radioButtonMale.UseVisualStyleBackColor = true;
-            // 
-            // pictureBoxPhoto
-            // 
-            this.pictureBoxPhoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxPhoto.Image = global::WinFormsAppTryingFitures.Properties.Resources.default_male_photo;
-            this.pictureBoxPhoto.Location = new System.Drawing.Point(15, 108);
-            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-            this.pictureBoxPhoto.Size = new System.Drawing.Size(140, 140);
-            this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPhoto.TabIndex = 21;
-            this.pictureBoxPhoto.TabStop = false;
             // 
             // buttonAdd
             // 
@@ -243,11 +232,22 @@
             this.comboBoxGroups.Size = new System.Drawing.Size(250, 30);
             this.comboBoxGroups.TabIndex = 29;
             // 
+            // pictureBoxPhoto
+            // 
+            this.pictureBoxPhoto.Image = global::WinFormsAppTryingFitures.Properties.Resources.default_male_photo;
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(15, 108);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(140, 140);
+            this.pictureBoxPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPhoto.TabIndex = 30;
+            this.pictureBoxPhoto.TabStop = false;
+            // 
             // FormRegistration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 550);
+            this.Controls.Add(this.pictureBoxPhoto);
             this.Controls.Add(this.comboBoxGroups);
             this.Controls.Add(this.labelGroup);
             this.Controls.Add(this.textBoxSecondName);
@@ -256,7 +256,6 @@
             this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
-            this.Controls.Add(this.pictureBoxPhoto);
             this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.pictureBoxShowPassword);
             this.Controls.Add(this.textBoxPassword);
@@ -272,8 +271,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegistration";
             this.Load += new System.EventHandler(this.FormRegistration_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShowPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +282,6 @@
 
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.RadioButton radioButtonMale;
-        private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.PictureBox pictureBoxShowPassword;
         private System.Windows.Forms.TextBox textBoxPassword;
@@ -299,5 +297,6 @@
         private System.Windows.Forms.Label labelSecondName;
         private System.Windows.Forms.Label labelGroup;
         private System.Windows.Forms.ComboBox comboBoxGroups;
+        private RoundPictureBox pictureBoxPhoto;
     }
 }

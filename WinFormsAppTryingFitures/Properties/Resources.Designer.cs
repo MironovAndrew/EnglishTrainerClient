@@ -111,11 +111,142 @@ namespace WinFormsAppTryingFitures.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйнюВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйнюшибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. По [остаток строки не уместился]&quot;;.
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static string StringError1 {
+        internal static System.Drawing.Bitmap Image1 {
             get {
-                return ResourceManager.GetString("StringError1", resourceCulture);
+                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Image2 {
+            get {
+                object obj = ResourceManager.GetObject("Image2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap q1 {
+            get {
+                object obj = ResourceManager.GetObject("q1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap q2 {
+            get {
+                object obj = ResourceManager.GetObject("q2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap q3 {
+            get {
+                object obj = ResourceManager.GetObject("q3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap q4 {
+            get {
+                object obj = ResourceManager.GetObject("q4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Recent past actions (just, already, yet)
+        /// 
+        ///To talk about past finished actions when we don’t know or say when the action happened. There’s often a present result.
+        ///
+        ///John has broken his leg and he is in hospital.
+        ///Sue has left. (=She is not here any more.)
+        ///We use just for actions that happened a very short time ago.
+        ///
+        ///Mike’s just called. He said that he’d call you back.
+        ///Sue has just left. She was here a minute ago.
+        ///We also use the present perfect simple with the words already and yet.
+        ///
+        ///Have you alre [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string question1 {
+            get {
+                return ResourceManager.GetString("question1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на so + adjective or adverb + (that) …
+        /// 
+        ///We use so + adjective or adverb.
+        ///
+        ///Why don’t you try to understand. You are so stubborn!
+        ///You’re getting on my nerves. Why do you drive so slowly?
+        ///We often use so + adjective or adverb + (that) …
+        ///
+        ///He is so good (that) he gets bored when he plays against me.  
+        ///John drives so slowly (that) other drivers get impatient around him. 
+        /// 
+        ///
+        ///such a + (adjective) + noun + (that) …
+        /// 
+        ///We use such a + (adjective) + countable singular noun
+        ///
+        ///I love her. She is such a brill [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string question2 {
+            get {
+                return ResourceManager.GetString("question2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на We use the second conditional to talk about hypothetical or imaginary situations in the present or the future. We can use past simple or past continuous in the if clause and we can use would, could or might + simple infinitive (do) or continuous infinitive (be doing) in the main clause.
+        ///
+        ///If there was a fire, it would be impossible to escape.
+        ///If you weren’t making so much noise, I could concentrate.
+        ///I wouldn’t have a car if I lived in the city. 
+        ///If it weren’t for him, I might not be talking to you right [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string question3 {
+            get {
+                return ResourceManager.GetString("question3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на I wish I did
+        /// 
+        ///We can use wish + subject + past simple to talk about things that we would like to be different in the present or future (but which are very unlikely or not possible).
+        ///
+        ///I wish things were different, but this is the way they are.  
+        ///We wish we had enough money to help you.
+        ///I wish I could be there for you tomorrow.  
+        /// 
+        ///
+        ///I wish I had done
+        /// 
+        ///We can use wish + subject + past perfect to talk about things that happened in the past and that we regret (we would have wanted them to be differe [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string question4 {
+            get {
+                return ResourceManager.GetString("question4", resourceCulture);
             }
         }
         

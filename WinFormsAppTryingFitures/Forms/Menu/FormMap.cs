@@ -65,7 +65,7 @@ namespace WinFormsAppTryingFitures
 
             gMapControl.CanDragMap = true;
             gMapControl.DragButton = MouseButtons.Left;
-            gMapControl.MapProvider = GMapProviders.BingHybridMap;
+            gMapControl.MapProvider = GMapProviders.GoogleMap;
 
 
             gMapControl.PolygonsEnabled = true;

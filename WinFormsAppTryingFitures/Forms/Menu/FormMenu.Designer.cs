@@ -35,6 +35,7 @@ namespace WinFormsAppTryingFitures
             this.buttonTrainer = new System.Windows.Forms.Button();
             this.buttonAccount = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.buttonTopics = new System.Windows.Forms.Button();
             this.buttonForum = new System.Windows.Forms.Button();
             this.panelShowForm = new System.Windows.Forms.Panel();
             this.pictureBoxPhoto = new WinFormsAppTryingFitures.RoundPictureBox();
@@ -102,7 +103,9 @@ namespace WinFormsAppTryingFitures
             // 
             // panelMenu
             // 
+            this.panelMenu.BackColor = System.Drawing.Color.GreenYellow;
             this.panelMenu.CausesValidation = false;
+            this.panelMenu.Controls.Add(this.buttonTopics);
             this.panelMenu.Controls.Add(this.buttonForum);
             this.panelMenu.Controls.Add(this.buttonTrainer);
             this.panelMenu.Controls.Add(this.buttonTranslator);
@@ -112,8 +115,22 @@ namespace WinFormsAppTryingFitures
             this.panelMenu.ImeMode = System.Windows.Forms.ImeMode.On;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(110, 550);
+            this.panelMenu.Size = new System.Drawing.Size(110, 660);
             this.panelMenu.TabIndex = 8;
+            // 
+            // buttonTopics
+            // 
+            this.buttonTopics.BackColor = System.Drawing.Color.GreenYellow;
+            this.buttonTopics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTopics.FlatAppearance.BorderSize = 0;
+            this.buttonTopics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTopics.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonTopics.Location = new System.Drawing.Point(0, 550);
+            this.buttonTopics.Name = "buttonTopics";
+            this.buttonTopics.Size = new System.Drawing.Size(110, 110);
+            this.buttonTopics.TabIndex = 9;
+            this.buttonTopics.Text = "Темы";
+            this.buttonTopics.UseVisualStyleBackColor = false;
             // 
             // buttonForum
             // 
@@ -136,7 +153,7 @@ namespace WinFormsAppTryingFitures
             this.panelShowForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelShowForm.Location = new System.Drawing.Point(110, 0);
             this.panelShowForm.Name = "panelShowForm";
-            this.panelShowForm.Size = new System.Drawing.Size(1090, 550);
+            this.panelShowForm.Size = new System.Drawing.Size(1090, 660);
             this.panelShowForm.TabIndex = 9;
             // 
             // pictureBoxPhoto
@@ -163,7 +180,7 @@ namespace WinFormsAppTryingFitures
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1200, 550);
+            this.ClientSize = new System.Drawing.Size(1200, 660);
             this.Controls.Add(this.panelShowForm);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -185,9 +202,10 @@ namespace WinFormsAppTryingFitures
         private System.Windows.Forms.Button buttonTrainer;
         private System.Windows.Forms.Button buttonAccount;
         private System.Windows.Forms.Panel panelMenu;
-        private System.Windows.Forms.Panel panelShowForm;
         private System.Windows.Forms.Label labelTest;
         private System.Windows.Forms.Button buttonForum;
         private RoundPictureBox pictureBoxPhoto;
+        private System.Windows.Forms.Button buttonTopics;
+        public System.Windows.Forms.Panel panelShowForm;
     }
 }

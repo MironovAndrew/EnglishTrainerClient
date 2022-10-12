@@ -76,7 +76,9 @@ namespace WinFormsAppTryingFitures
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
+
+                    CustomMessageBox.Show(ex.Message);
                 }
                 finally
                 {

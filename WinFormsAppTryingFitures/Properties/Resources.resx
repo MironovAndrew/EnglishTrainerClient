@@ -136,7 +136,168 @@
   <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StringError1" xml:space="preserve">
-    <value>Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйнюВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйнюшибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибВнимание ошибка. Вы ввели хуйню. Повторяю вы ввели хуйню!Внимание ошибка. Вы ввели хуйню.Конец</value>
+  <data name="Image1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image1.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image2.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="q1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\q1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="q2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\q2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="q3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\q3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="q4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\q4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question1" xml:space="preserve">
+    <value>Recent past actions (just, already, yet)
+ 
+To talk about past finished actions when we don’t know or say when the action happened. There’s often a present result.
+
+John has broken his leg and he is in hospital.
+Sue has left. (=She is not here any more.)
+We use just for actions that happened a very short time ago.
+
+Mike’s just called. He said that he’d call you back.
+Sue has just left. She was here a minute ago.
+We also use the present perfect simple with the words already and yet.
+
+Have you already finished your homework?
+She hasn’t called me yet.
+ 
+
+Experiences (never, ever, before)
+ 
+To talk about past experiences when we don’t say when something happened.
+
+He has been to the moon. He’s an astronaut.
+I haven’t been to India.
+We often use the words never, ever, or before to talk about experiences.
+
+I have never read this book.
+Have you ever seen a John Wayne film.
+I haven’t experienced anything like this before.
+ 
+
+How much we have done of something of how many times we have done something
+ 
+To talk about how much of something we have done or how many times we have done something (none, one, two, three, etc.) up to now.
+
+He’s drunk a lot of coffee and now he is very nervous.
+I’ve seen this film three times.
+This shop has been robbed four times.
+You’ve eaten too much.
+ 
+
+The best thing I’ve ever done
+ 
+We can use the present perfect simple with the superlative and ever.
+
+This is the best meal I’ve ever had.
+It’s the most amazing place we’ve ever travelled to.</value>
+  </data>
+  <data name="question2" xml:space="preserve">
+    <value>so + adjective or adverb + (that) …
+ 
+We use so + adjective or adverb.
+
+Why don’t you try to understand. You are so stubborn!
+You’re getting on my nerves. Why do you drive so slowly?
+We often use so + adjective or adverb + (that) …
+
+He is so good (that) he gets bored when he plays against me.  
+John drives so slowly (that) other drivers get impatient around him. 
+ 
+
+such a + (adjective) + noun + (that) …
+ 
+We use such a + (adjective) + countable singular noun
+
+I love her. She is such a brilliant actress.
+It was such a party! We had a lot of fun. 
+We often use such a + (adjective) + countable singular noun + (that) …
+
+It had been such a terrible day (that) I just wanted to go to bed. 
+He is such a liar (that) nobody trusts him any more. 
+ 
+
+such + (adjective) + noun + (that) …
+ 
+We use such + (adjective) + uncountable noun or plural noun
+
+The trip was a disaster. We had such terrible weather!
+Everybody loves being with Tom. He tells such funny stories!
+We often use such + (adjective) + uncountable noun or plural noun + (that) …
+
+We had such terrible weather (that) we decided to go back home. 
+She said such nice things (that) we were all moved. 
+ 
+
+so and such: meaning
+ 
+We can use so and such to make the meaning of an adjective, adverb or noun stronger (=very/really).
+
+Why did you do it? You are so stupid!
+He was such a terrible father that now his kids don’t want to be around him. 
+We can also use so and such to mean ‘like this’.
+
+Sorry I didn’t call. I didn’t know it was so important for you. (=important like this).
+I don’t understand how you could make such a terrible mistake. (= a mistake like this)</value>
+  </data>
+  <data name="question3" xml:space="preserve">
+    <value>We use the second conditional to talk about hypothetical or imaginary situations in the present or the future. We can use past simple or past continuous in the if clause and we can use would, could or might + simple infinitive (do) or continuous infinitive (be doing) in the main clause.
+
+If there was a fire, it would be impossible to escape.
+If you weren’t making so much noise, I could concentrate.
+I wouldn’t have a car if I lived in the city. 
+If it weren’t for him, I might not be talking to you right now. 
+When we use the verb be in the if clause, we can use either was (more formal) or were (spoken English) after I, he, she or it. But when we are giving advice, we always use if I were you (NOT was).
+
+If he was/were rich, he wouldn’t be living in this house. 
+If I were you, I’d call him as soon as possible. (NOT was)
+As with all conditional types, we use a comma after the if clause when it goes at the beginning of the sentence, but we don’t use a comma when the if clause goes at the end.
+
+If you weren’t making so much noise, I could concentrate. 
+I could concentrate if you weren’t making so much noise.</value>
+  </data>
+  <data name="question4" xml:space="preserve">
+    <value>I wish I did
+ 
+We can use wish + subject + past simple to talk about things that we would like to be different in the present or future (but which are very unlikely or not possible).
+
+I wish things were different, but this is the way they are.  
+We wish we had enough money to help you.
+I wish I could be there for you tomorrow.  
+ 
+
+I wish I had done
+ 
+We can use wish + subject + past perfect to talk about things that happened in the past and that we regret (we would have wanted them to be different).
+
+I wish I hadn’t quit my job two years ago. 
+I wish we hadn’t wasted all that money. 
+ 
+
+I wish you would do
+ 
+We can use wish + person/thing + would + infinitive when we talk about situations that annoy us and we would like them to change, or to stop.
+
+I wish you would stop biting your nails. I hate it when you do it.
+I wish it would stop raining. It’s been three days!
+We CANNOT use this structure to wish about ourselves (do NOT use I wish I would).
+ 
+
+If only
+ 
+We can use if only instead of I wish with a very similar meaning. The only difference is that if only is more emphatic.
+
+If only I was/were a bit taller!*
+If only you had followed my advice. 
+If only you would make a bit of an effort. You are wasting your life!</value>
   </data>
 </root>

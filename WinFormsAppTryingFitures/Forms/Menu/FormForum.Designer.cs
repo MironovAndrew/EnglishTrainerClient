@@ -76,10 +76,10 @@
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 166);
+            this.panel1.Location = new System.Drawing.Point(0, 173);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(25, 25, 25, 20);
-            this.panel1.Size = new System.Drawing.Size(1090, 384);
+            this.panel1.Size = new System.Drawing.Size(1090, 487);
             this.panel1.TabIndex = 5;
             // 
             // labelComment
@@ -117,7 +117,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1090, 550);
+            this.ClientSize = new System.Drawing.Size(1090, 660);
             this.Controls.Add(this.pictureBoxOwnPhoto);
             this.Controls.Add(this.pictureBoxUpdate);
             this.Controls.Add(this.labelComment);

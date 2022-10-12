@@ -17,7 +17,7 @@ namespace WinFormsAppTryingFitures
         List<Button> btnsList;
         string firstSecondName;
 
-        public FormMenu(string firstSecondName,string login, PictureBox pb)
+        public FormMenu(string firstSecondName, string login, PictureBox pb)
         {
             InitializeComponent();
 
@@ -52,23 +52,24 @@ namespace WinFormsAppTryingFitures
             buttonTranslator.Click += (a, b) => { showForm(new FormTranslator()); };
             buttonTrainer.Click += (a, b) => { showForm(new FormTrainer()); };
             buttonForum.Click += (a, b) => { showForm(new FormForum(firstSecondName, login, pb)); };
+            buttonTopics.Click += (a, b) => { showForm(new FormTopics()); };
             #endregion
 
 
 
         }
 
-        void showForm(Form selectedForm, string login = null, PictureBox pictureBox = null)
+       public void showForm(Form selectedForm, string login = null, PictureBox pictureBox = null)
         {
             panelMenu.Focus();
 
             panelShowForm.Controls.Clear();
-            
+
             Form form = selectedForm;
             form.TopLevel = false;
 
             panelShowForm.Tag = form;
-            form.Size = new Size(panelShowForm.Width,panelShowForm.Height);
+            form.Size = new Size(panelShowForm.Width, panelShowForm.Height);
             panelShowForm.Controls.Add(form);
 
             form.Show();

@@ -39,7 +39,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.PaleGreen;
             this.panel1.Controls.Add(this.labelScore);
             this.panel1.Controls.Add(this.textBoxAnswer);
             this.panel1.Controls.Add(this.labelQuestionNumber);

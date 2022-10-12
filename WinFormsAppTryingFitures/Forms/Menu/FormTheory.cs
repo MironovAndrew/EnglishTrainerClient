@@ -34,7 +34,6 @@ namespace WinFormsAppTryingFitures
                 FormTopics form = new FormTopics();
                 form.TopLevel = false;
 
-                panel1.Tag = form;
                 panel1.Controls.Add(form);
 
                 form.Show();

@@ -81,7 +81,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.LightGreen;
             this.panel1.Controls.Add(this.buttonExercise);
             this.panel1.Controls.Add(this.buttonBack);
             this.panel1.Controls.Add(this.pictureBoxPhoto);
@@ -89,6 +89,7 @@
             this.panel1.Controls.Add(this.labelText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1090, 660);
             this.panel1.TabIndex = 4;

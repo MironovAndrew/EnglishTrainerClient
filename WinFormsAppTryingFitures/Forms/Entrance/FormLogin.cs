@@ -67,68 +67,6 @@ namespace WinFormsAppTryingFitures
 
                 try
                 {
-                    #region Старое
-
-                    //  //SqlCommand command = new SqlCommand($"SELECT * FROM students WHERE Login = N'{textBox1.Text}' AND Password = N'{textBox2.Text}'", connection);
-                    //  SqlCommand command = new SqlCommand($"SELECT * FROM students WHERE Login = N'{textBox1.Text}' AND Password = N'{textBox2.Text}'", connection);
-                    //
-                    //
-                    //  dataReader = command.ExecuteReader();
-                    //  dataReader.Read();
-                    //
-                    //  PictureBox pictureBoxToMainForm = new PictureBox();
-                    //
-                    //  if (dataReader.HasRows)
-                    //  {
-                    //
-                    //       if (dataReader["Photo"] != DBNull.Value)
-                    //       {
-                    //      
-                    //           byte[] image = (byte[])(dataReader["Photo"]);
-                    //      
-                    //           if (image == null)
-                    //           {
-                    //               pictureBoxToMainForm = null;
-                    //           }
-                    //           else
-                    //           {
-                    //      
-                    //               MemoryStream memoryStream = new MemoryStream(image);
-                    //               pictureBoxToMainForm.Image = Image.FromStream(memoryStream);
-                    //           }
-                    //       }
-                    //
-                    //
-                    //
-                    //      
-                    //
-                    //
-                    //      else
-                    //      {
-                    //          if (Convert.ToString(dataReader["Gender"]) == "m")
-                    //          {
-                    //              pictureBoxToMainForm.Image = Properties.Resources.default_male_photo;
-                    //          }
-                    //          else
-                    //          {
-                    //              pictureBoxToMainForm.Image = Properties.Resources.default_female_photo;
-                    //          }
-                    //      }
-                    //
-                    //      FormMenu form = new FormMenu(textBox1.Text, pictureBoxToMainForm);
-                    //      form.Show();
-                    //      this.Hide();
-                    //
-                    //  }
-                    //  else
-                    //  {
-                    //      MessageBox.Show("Данные введены некорректно!");
-                    //  }
-                    #endregion
-
-
-
-
                     PictureBox pictureBoxToMainForm = new PictureBox();
 
 
@@ -209,22 +147,14 @@ namespace WinFormsAppTryingFitures
                     {
                         //MessageBox.Show("Данные введены некорректно!");
 
-                      if (Application.OpenForms["FormShowMessage"] == null)
-                      {
-                            FormShowMessage form = new FormShowMessage("Данные введены некорректно!");
-                            form.Show();
-                      }
+                        CustomMessageBox.Show("Данные введены некорректно!");
                     }
                 }
                 catch (Exception ex)
                 {
                     // MessageBox.Show(ex.ToString());
 
-                    if (Application.OpenForms["FormShowMessage"] == null)
-                    {
-                        FormShowMessage form = new FormShowMessage(ex.Message);
-                        form.Show();
-                    }
+                    CustomMessageBox.Show(ex.Message);
                 }
                 finally
                 {

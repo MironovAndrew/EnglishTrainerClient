@@ -17,40 +17,58 @@ namespace WinFormsAppTryingFitures
             InitializeComponent();
 
 
-            
+            int coordinateY = 30;
+            int delta = 30;
             for (int i = 0; i < grammarNameList.Count; i++)
             {
                 Label label = new Label();
 
                 label.AutoSize = true;
-                label.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-                label.ForeColor = Color.MediumVioletRed;
+                label.Font = new Font("Century Gothic", 14.25F);
+
+                label.ForeColor = Color.Red;
                 label.Cursor = Cursors.Hand;
                 label.Text = grammarNameList[i];
 
+                label.Anchor = AnchorStyles.Top;
+
                 label.Tag = i;
+
+                label.MaximumSize = new Size(panel1.Width - 2 * delta, int.MaxValue);
+                label.Location = new Point(delta, coordinateY);
+                coordinateY += delta;
 
                 label.Click += (a, b) =>
                 {
                     int count = Convert.ToInt32(label.Tag);
 
-                    flowLayoutPanel1.Controls.Clear();
+                    panel1.Controls.Clear();
 
                     FormTheory form = new FormTheory(grammarNameList[count], grammarPicturesList[count], grammarTextsList[count]);
+
+
                     form.TopLevel = false;
 
-                    flowLayoutPanel1.Tag = form;
-                    flowLayoutPanel1.Controls.Add(form);
+                    panel1.Controls.Add(form);
 
                     form.Show();
+                    
 
                 };
 
 
 
-                flowLayoutPanel1.Controls.Add(label);
+                panel1.Controls.Add(label);
 
             }
+
+
+
+            panel1.AutoScroll = false;
+            panel1.HorizontalScroll.Enabled = false;
+            panel1.HorizontalScroll.Visible = false;
+            panel1.HorizontalScroll.Maximum = 0;
+            panel1.AutoScroll = true;
         }
 
 
@@ -78,7 +96,7 @@ namespace WinFormsAppTryingFitures
           Properties.Resources.question2,
           Properties.Resources.question3,
           Properties.Resources.question4,
-        
+
         };
 
 

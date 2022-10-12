@@ -177,11 +177,7 @@ namespace WinFormsAppTryingFitures
                     {
                         //MessageBox.Show(ex.Message);
 
-                        if (Application.OpenForms["FormShowMessage"] == null)
-                        {
-                            FormShowMessage form = new FormShowMessage(ex.Message);
-                            form.Show();
-                        }
+                        CustomMessageBox.Show(ex.Message);
                     }
                     finally
                     {
@@ -193,11 +189,8 @@ namespace WinFormsAppTryingFitures
                 {
                     //MessageBox.Show("Проверьте введенные данные! Поля должны иметь длину более 3 символов!");
 
-                    if (Application.OpenForms["FormShowMessage"] == null)
-                    {
-                        FormShowMessage form = new FormShowMessage("Проверьте введенные данные! Поля должны иметь длину более 3 символов!");
-                        form.Show();
-                    }
+
+                    CustomMessageBox.Show("Проверьте введенные данные! Поля должны иметь длину более 3 символов!");
                 }
             };
 

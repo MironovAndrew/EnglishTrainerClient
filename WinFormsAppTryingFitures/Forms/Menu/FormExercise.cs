@@ -69,7 +69,7 @@ namespace WinFormsAppTryingFitures
                 }
                 else
                 {
-                    CustomMessageBox.Show($"Неверно!\nВопрос: {answersList[questionNumber]}\nПравильный ответ: {answersList[questionNumber]}");
+                    CustomMessageBox.Show($"Неверно!\nВопрос: {quastionList[questionNumber]}\nПравильный ответ: {answersList[questionNumber]}");
                 }
 
 

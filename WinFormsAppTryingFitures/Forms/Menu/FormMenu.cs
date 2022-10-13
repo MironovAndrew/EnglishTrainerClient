@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsAppTryingFitures.CustomClasses;
 using WinFormsAppTryingFitures.Forms;
 
 namespace WinFormsAppTryingFitures
@@ -26,7 +27,6 @@ namespace WinFormsAppTryingFitures
             labelTest.Text = $"Добрый день, {firstSecondName}";
             pictureBoxPhoto.Image = pb.Image;
 
-            #region ---ОПЫТЫ---     Обработка события через foreach( )
 
             //Добавляем кнопки в список напрямую, потому что при размещении кнопок на панели к ним нельзя
             //обращаться через foreach( )
@@ -35,45 +35,19 @@ namespace WinFormsAppTryingFitures
                 buttonAccount,buttonData,buttonTranslator,buttonTrainer
             };
 
-            //foreach (Button btn in btnsList)
-            //{
-            //    btn.Click += (a, b) =>
-            //    {
-            //        MessageBox.Show(btn.Name);
-            //    };
-            //}
-
-            #endregion
-
 
             #region События кнопок для меню
-            buttonAccount.Click += (a, b) => { showForm(new FormAccount()); };
-            buttonData.Click += (a, b) => { showForm(new FormMap()); };
-            buttonTranslator.Click += (a, b) => { showForm(new FormTranslator()); };
-            buttonTrainer.Click += (a, b) => { showForm(new FormTrainer()); };
-            buttonForum.Click += (a, b) => { showForm(new FormForum(firstSecondName, login, pb)); };
-            buttonTopics.Click += (a, b) => { showForm(new FormTopics()); };
+            buttonAccount.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormAccount()); };
+            buttonData.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormMap()); };
+            buttonTranslator.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormTranslator()); };
+            buttonTrainer.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormTrainer()); };
+            buttonForum.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormForum(firstSecondName, login, pb)); };
+            buttonTopics.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormTopics()); };
             #endregion
 
 
-
         }
 
-       public void showForm(Form selectedForm, string login = null, PictureBox pictureBox = null)
-        {
-            panelMenu.Focus();
-
-            panelShowForm.Controls.Clear();
-
-            Form form = selectedForm;
-            form.TopLevel = false;
-
-            panelShowForm.Tag = form;
-            form.Size = new Size(panelShowForm.Width, panelShowForm.Height);
-            panelShowForm.Controls.Add(form);
-
-            form.Show();
-        }
 
     }
 }

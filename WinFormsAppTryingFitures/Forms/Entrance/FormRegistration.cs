@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsAppTryingFitures.CustomClasses;
 
 namespace WinFormsAppTryingFitures
 {
@@ -169,14 +170,13 @@ namespace WinFormsAppTryingFitures
                         string firstSecondName = textBoxSecondName.Text + " " + textBoxFirstName.Text;
                         string login = textBoxLogin.Text;
 
-                        FormMenu form = new FormMenu(firstSecondName, login, pictureBoxPhoto);
+                        //FormMenu form = new FormMenu(firstSecondName, login, pictureBoxPhoto);
+                        FormLogin form = new FormLogin();
                         form.Show();
                         this.Hide();
                     }
                     catch (Exception ex)
                     {
-                        //MessageBox.Show(ex.Message);
-
                         CustomMessageBox.Show(ex.Message);
                     }
                     finally
@@ -187,9 +187,6 @@ namespace WinFormsAppTryingFitures
                 }
                 else
                 {
-                    //MessageBox.Show("Проверьте введенные данные! Поля должны иметь длину более 3 символов!");
-
-
                     CustomMessageBox.Show("Проверьте введенные данные! Поля должны иметь длину более 3 символов!");
                 }
             };

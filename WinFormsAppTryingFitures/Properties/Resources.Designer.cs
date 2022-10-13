@@ -63,6 +63,16 @@ namespace WinFormsAppTryingFitures.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap choosingPicture {
+            get {
+                object obj = ResourceManager.GetObject("choosingPicture", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap default_female_photo {
             get {
                 object obj = ResourceManager.GetObject("default_female_photo", resourceCulture);

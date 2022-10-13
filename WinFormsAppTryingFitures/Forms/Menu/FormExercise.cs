@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsAppTryingFitures.CustomClasses;
 
 namespace WinFormsAppTryingFitures
 {
@@ -96,15 +97,23 @@ namespace WinFormsAppTryingFitures
                     }
 
 
-                    panel1.Controls.Clear();
 
-                    FormTopics form = new FormTopics();
-                    form.TopLevel = false;
 
-                    panel1.Tag = form;
-                    panel1.Controls.Add(form);
+                    FormOnPanel.Show(panel1, new FormTopics());
 
-                    form.Show();
+
+
+
+
+                    //panel1.Controls.Clear();
+
+                    //FormTopics form = new FormTopics();
+                    //form.TopLevel = false;
+
+                    //panel1.Tag = form;
+                    //panel1.Controls.Add(form);
+
+                    //form.Show();
 
                 }
                 else

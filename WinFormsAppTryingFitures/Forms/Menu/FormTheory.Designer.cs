@@ -69,7 +69,7 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.Color.Red;
+            this.buttonBack.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonBack.Location = new System.Drawing.Point(27, 12);
@@ -81,7 +81,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGreen;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.buttonExercise);
             this.panel1.Controls.Add(this.buttonBack);
             this.panel1.Controls.Add(this.pictureBoxPhoto);
@@ -89,14 +89,14 @@
             this.panel1.Controls.Add(this.labelText);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1090, 660);
             this.panel1.TabIndex = 4;
             // 
             // buttonExercise
             // 
-            this.buttonExercise.BackColor = System.Drawing.Color.Green;
+            this.buttonExercise.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.buttonExercise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExercise.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonExercise.Location = new System.Drawing.Point(27, 58);

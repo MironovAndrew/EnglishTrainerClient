@@ -29,14 +29,7 @@ namespace WinFormsAppTryingFitures
 
             buttonBack.Click += (a, b) =>
             {
-                panel1.Controls.Clear();
-
-                FormTopics form = new FormTopics();
-                form.TopLevel = false;
-
-                panel1.Controls.Add(form);
-
-                form.Show();
+                FormOnPanel.Show(panel1, new FormTopics());
             };
 
 
@@ -70,15 +63,7 @@ namespace WinFormsAppTryingFitures
 
             buttonExercise.Click += (a, b) =>
             {
-                panel1.Controls.Clear();
-
-                FormExercise form = new FormExercise(quastionList, answersList);
-                form.TopLevel = false;
-
-                panel1.Tag = form;
-                panel1.Controls.Add(form);
-
-                form.Show();
+                FormOnPanel.Show(panel1, new FormExercise(quastionList, answersList));
             };
 
 

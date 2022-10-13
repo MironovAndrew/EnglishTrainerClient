@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsAppTryingFitures.CustomClasses;
 
 namespace WinFormsAppTryingFitures
 {
@@ -138,9 +139,23 @@ namespace WinFormsAppTryingFitures
 
 
 
-                        FormMenu form = new FormMenu(firstSecondName, login, pictureBoxToMainForm);
-                        form.Show();
+                        if (textBoxLogin.Text.ToLower() == "admin") 
+                        {
+                            FormAdmin form = new FormAdmin();
+                            form.Show();
+                        }
+                        else
+                        {
+                            FormMenu form = new FormMenu(firstSecondName, login, pictureBoxToMainForm);
+                            form.Show();
+                        }
+
                         this.Hide();
+
+
+
+
+
 
                     }
                     else

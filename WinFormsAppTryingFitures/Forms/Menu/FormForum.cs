@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsAppTryingFitures.CustomClasses;
 
 namespace WinFormsAppTryingFitures
 {
@@ -122,45 +123,6 @@ namespace WinFormsAppTryingFitures
 
             while (dataReader.Read())
             {
-
-                #region ---ОПЫТЫ--- изображение
-                //   PictureBox pictureBoxFromDB = new PictureBox();
-                //
-                //   if (dataReader.HasRows && dataReader["photo"] != DBNull.Value)
-                //   {
-                //
-                //       byte[] image = (byte[])(dataReader["photo"]);
-                //
-                //       if (image == null)
-                //       {
-                //           pictureBoxFromDB = null;
-                //       }
-                //       else
-                //       {
-                //           MemoryStream memoryStream = new MemoryStream(image);
-                //           pictureBox2.Image = Image.FromStream(memoryStream);
-                //       }
-                //   }
-                //   else
-                //   {
-                //       if (Convert.ToString(dataReader["gender"]) == "m")
-                //       {
-                //           pictureBox2.Image = Properties.Resources.default_male_photo;
-                //       }
-                //       else
-                //       {
-                //           pictureBox2.Image = Properties.Resources.default_female_photo;
-                //       }
-                //   }
-                //
-                //   photosList.Add(pictureBox2.Image);
-                #endregion
-
-
-
-
-
-                //string base64FromDataBase = command.ExecuteScalar().ToString();
                 string base64FromDataBase = Convert.ToString(dataReader["photo"]);
 
 
@@ -354,13 +316,11 @@ namespace WinFormsAppTryingFitures
 
 
 
-                //panelComment.Size = new Size(800, labelComment.Height + labelDate.Height + labelName.Height + delta);
                 panelComment.Size = new Size(panel1.Width - 50, labelComment.Height + labelDate.Height + labelName.Height + delta);
 
 
 
 
-                //panelComment.Location = new Point(25, 25 + (labelComment.Height + labelDate.Height + labelName.Height + 25 + delta) * i);
                 panelComment.Location = new Point(25, coordinateY);
                
                 coordinateY += panelComment.Height + delta - 20;
@@ -369,7 +329,7 @@ namespace WinFormsAppTryingFitures
 
 
 
-                panelComment.BackColor = Color.Orange;
+                panelComment.BackColor = Color.Gainsboro;
 
                 panel1.Controls.Add(panelComment);
 
@@ -382,21 +342,5 @@ namespace WinFormsAppTryingFitures
             panel1.AutoScrollPosition = new Point(0,int.MaxValue);
         }
 
-
-       // void panelShowing_Layout()
-       // {
-       //     List<Control> controlsList = new List<Control>();
-       //     for (int i = 0; i < panel1.Controls.Count; i++)
-       //     {
-       //         controlsList.Add(panel1.Controls[i]);
-       //     }
-       //
-       //     foreach (Control control in controlsList)
-       //     {
-       //         control.Dispose();
-       //     }
-       //
-       //     showPanels();
-       // }
     }
 }

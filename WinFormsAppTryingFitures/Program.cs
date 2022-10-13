@@ -19,8 +19,7 @@ namespace WinFormsAppTryingFitures
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-
-            //Application.Run(new FormShowMessage(Properties.Resources.StringError1));
+            //Application.Run(new FormAdmin());
             Application.Run(new FormLogin());
         }
     }

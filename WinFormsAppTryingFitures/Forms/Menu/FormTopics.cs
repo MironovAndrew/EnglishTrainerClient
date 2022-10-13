@@ -26,7 +26,7 @@ namespace WinFormsAppTryingFitures
                 label.AutoSize = true;
                 label.Font = new Font("Century Gothic", 14.25F);
 
-                label.ForeColor = Color.Red;
+                label.ForeColor = Color.DarkSlateBlue;
                 label.Cursor = Cursors.Hand;
                 label.Text = grammarNameList[i];
 
@@ -42,16 +42,16 @@ namespace WinFormsAppTryingFitures
                 {
                     int count = Convert.ToInt32(label.Tag);
 
-                    panel1.Controls.Clear();
-
-                    FormTheory form = new FormTheory(grammarNameList[count], grammarPicturesList[count], grammarTextsList[count]);
 
 
-                    form.TopLevel = false;
+                    FormOnPanel.Show(panel1, new FormTheory(grammarNameList[count], grammarPicturesList[count], grammarTextsList[count]));
 
-                    panel1.Controls.Add(form);
 
-                    form.Show();
+                    //panel1.Controls.Clear();
+                    //FormTheory form = new FormTheory(grammarNameList[count], grammarPicturesList[count], grammarTextsList[count]);
+                    //form.TopLevel = false;
+                    //panel1.Controls.Add(form);
+                    //form.Show();
                     
 
                 };

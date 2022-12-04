@@ -1,4 +1,6 @@
-﻿namespace WinFormsAppTryingFitures
+﻿using WinFormsAppTryingFitures;
+
+namespace WinFormsAppTryingFitures
 {
     partial class FormForum
     {

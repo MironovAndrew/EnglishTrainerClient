@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsAppTryingFitures.CustomClasses
+namespace WinFormsAppTryingFitures
 {
     public static class CustomMessageBox
     {

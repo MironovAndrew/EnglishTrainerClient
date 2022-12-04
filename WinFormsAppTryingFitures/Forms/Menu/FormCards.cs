@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormsAppTryingFitures
+namespace WinFormsAppTryingFitures.Forms.Menu
 {
-    public partial class FormTranslator : Form
+    public partial class FormCards : Form
     {
-        public FormTranslator()
+        public FormCards()
         {
             InitializeComponent();
         }

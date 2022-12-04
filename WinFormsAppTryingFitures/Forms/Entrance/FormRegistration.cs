@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsAppTryingFitures.CustomClasses;
 
 namespace WinFormsAppTryingFitures
 {
@@ -19,6 +14,13 @@ namespace WinFormsAppTryingFitures
         public FormRegistration()
         {
             InitializeComponent();
+
+
+            panelRegistration.AutoScroll = false;
+            panelRegistration.HorizontalScroll.Enabled = false;
+            panelRegistration.HorizontalScroll.Visible = false;
+            panelRegistration.HorizontalScroll.Maximum = 0;
+            panelRegistration.AutoScroll = true;
         }
 
         private async void FormRegistration_Load(object sender, EventArgs e)
@@ -193,6 +195,19 @@ namespace WinFormsAppTryingFitures
 
 
 
+            bool isShown = false;
+            int panelHeight = 10;
+            buttonShowPostPanel.Click += (a, b) =>
+            {
+                panelHeight = isShown == true ? panelHeight = 10 : panelHeight = 170;
+
+                panelChoosingPost.Size = new Size(panelChoosingPost.Size.Width, panelHeight);
+
+                panelGroup.Location = new Point
+                (panelGroup.Location.X, panelChoosingPost.Location.Y + panelChoosingPost.Height + 10);
+
+                isShown = !isShown;
+            };
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -209,5 +224,7 @@ namespace WinFormsAppTryingFitures
                 textBoxPasswordRepeat.Text = "";
             }
         }
+
+        
     }
 }

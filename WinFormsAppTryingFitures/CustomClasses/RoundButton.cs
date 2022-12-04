@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -9,14 +8,13 @@ using System.Windows.Forms;
 
 namespace WinFormsAppTryingFitures
 {
-    internal class RoundPictureBox:PictureBox
+    class RoundButton : Button
     {
         protected override void OnPaint(PaintEventArgs pevent)
         {
             GraphicsPath g = new GraphicsPath();
-            g.AddEllipse(0,0, ClientSize.Width, ClientSize.Height);
-            this.Region = new Region(g);
-
+            g.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
+            Region = new Region(g);
 
             base.OnPaint(pevent);
         }

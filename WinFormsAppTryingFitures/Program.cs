@@ -19,7 +19,7 @@ namespace WinFormsAppTryingFitures
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new FormChosingCourse());
+            Application.Run(new FormSettingCards());
         }
     }
 }

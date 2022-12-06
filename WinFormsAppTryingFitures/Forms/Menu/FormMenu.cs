@@ -30,8 +30,6 @@ namespace WinFormsAppTryingFitures
             #region События кнопок для меню
             buttonAccount.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormAccount()); };
             buttonData.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormMap()); };
-            buttonTranslator.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormTranslator()); };
-            buttonTrainer.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormTrainer()); };
             buttonForum.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormForum(firstSecondName, login, pb)); };
             buttonTopics.Click += (a, b) => { FormOnPanel.Show(panelShowForm, new FormTopics()); };
             #endregion

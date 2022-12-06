@@ -73,6 +73,16 @@ namespace WinFormsAppTryingFitures.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap chosenHeart {
+            get {
+                object obj = ResourceManager.GetObject("chosenHeart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap default_female_photo {
             get {
                 object obj = ResourceManager.GetObject("default_female_photo", resourceCulture);
@@ -257,6 +267,16 @@ namespace WinFormsAppTryingFitures.Properties {
         internal static string question4 {
             get {
                 return ResourceManager.GetString("question4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap unchosenHeart {
+            get {
+                object obj = ResourceManager.GetObject("unchosenHeart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

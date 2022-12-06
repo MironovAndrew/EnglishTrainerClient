@@ -14,7 +14,8 @@ namespace WinFormsAppTryingFitures
         protected override void OnPaint(PaintEventArgs pevent)
         {
             GraphicsPath g = new GraphicsPath();
-            g.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
+           // g.AddEllipse(0, 0, ClientSize.Width, ClientSize.Height);
+            g.AddEllipse(0, 0, ClientSize.Width/5, ClientSize.Height/5);
             Region = new Region(g);
 
 

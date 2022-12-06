@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WinFormsAppTryingFitures
 {
-    class RoundButton : Button
+    internal class RoundButton : Button
     {
         protected override void OnPaint(PaintEventArgs pevent)
         {

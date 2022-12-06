@@ -103,14 +103,19 @@
             // 
             // listView
             // 
+            this.listView.Activation = System.Windows.Forms.ItemActivation.TwoClick;
             this.listView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
             this.listView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listView.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.listView.FullRowSelect = true;
             this.listView.GridLines = true;
+            this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listView.HideSelection = false;
             this.listView.Location = new System.Drawing.Point(0, 57);
+            this.listView.MultiSelect = false;
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(700, 643);
             this.listView.TabIndex = 1;
